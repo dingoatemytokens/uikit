@@ -181,7 +181,7 @@ export const ExpandableRows: Story = {
 }
 
 export const ExpandableRowsToggled: Story = {
-  args: {} as React.ComponentProps<typeof DataTable>,
+  args: ExpandableRows.args,
   tags: ['visual-expandable-toggle'],
   parameters: {
     snapshot: { animationDelay: 100 },
@@ -189,7 +189,11 @@ export const ExpandableRowsToggled: Story = {
   render: ExpandableRows.render,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    await userEvent.click((await canvas.findAllByRole('button', { name: 'Expand row' }))[0])
+    const expandButtons = await canvas.findAllByRole('button', { name: 'Expand row' })
+    if (expandButtons.length === 0) {
+      throw new Error('No expandable row buttons found')
+    }
+    await userEvent.click(expandButtons[0])
     await waitFor(() => canvas.getByText(/Detailed payment information for/i), { timeout: 1500 })
   },
 }
