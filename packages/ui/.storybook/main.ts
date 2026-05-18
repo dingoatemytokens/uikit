@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import { resolve } from 'path'
 
+const disableVitestAddon = process.env.STORYBOOK_DISABLE_ADDON_VITEST === 'true'
+
 const config: StorybookConfig = {
   stories: [
     '../src/components/ui/**/__stories__/*.stories.@(js|jsx|mjs|ts|tsx)',
@@ -10,7 +12,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-docs',
-    '@storybook/addon-vitest',
+    ...(!disableVitestAddon ? ['@storybook/addon-vitest'] : []),
     '@storybook/addon-a11y',
   ],
 
