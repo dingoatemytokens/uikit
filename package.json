@@ -4,7 +4,9 @@
   "description": "The Acronis UI Shadcn UI components library with color schemes and demos",
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "apps/*",
+    "packages/*",
+    "plugins/*"
   ],
   "scripts": {
     "husky": "pnpm run lint-staged && pnpm run lint:ts",
@@ -54,8 +56,14 @@
     "eslint-plugin-unused-imports": "^4.3.0"
   },
   "lint-staged": {
+    "apps/**/*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ],
     "packages/**/*.{js,jsx,ts,tsx,vue}": [
       "eslint --fix"
+    ],
+    "apps/**/*.{json,md,yml,yaml}": [
+      "prettier --write"
     ],
     "packages/**/*.{json,md,yml,yaml}": [
       "prettier --write"

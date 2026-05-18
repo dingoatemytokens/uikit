@@ -13,7 +13,7 @@ RUN npm install -g pnpm@10.27.0
 # Copy workspace manifests only — invalidated on lockfile/manifest changes (rare)
 COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
 COPY packages/ui/package.json ./packages/ui/
-COPY packages/demo/package.json ./packages/demo/
+COPY apps/demo/package.json ./apps/demo/
 
 # Install deps — pnpm content-addressable store is cached between builds
 RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
