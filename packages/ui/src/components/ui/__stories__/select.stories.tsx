@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { userEvent, within } from '@storybook/test'
+import { userEvent, within } from 'storybook/test'
 import {
   Select,
   SelectContent,
@@ -75,6 +75,7 @@ const selectRender = () => (
 const openSelectPlay = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
   const canvas = within(canvasElement)
   await userEvent.click(canvas.getByRole('combobox'))
+  await userEvent.keyboard('{ArrowDown}')
 }
 
 export const DarkDefault: Story = {

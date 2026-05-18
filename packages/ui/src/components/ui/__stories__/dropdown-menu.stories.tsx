@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { userEvent, within } from '@storybook/test'
+import { userEvent, within } from 'storybook/test'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,6 +42,7 @@ export const Open: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await userEvent.click(canvas.getByRole('button', { name: 'Open Menu' }))
+    await userEvent.keyboard('{ArrowDown}')
   },
 }
 
@@ -116,6 +117,7 @@ const dropdownRender = () => (
 const openMenuPlay = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
   const canvas = within(canvasElement)
   await userEvent.click(canvas.getByRole('button', { name: 'Open Menu' }))
+  await userEvent.keyboard('{ArrowDown}')
 }
 
 export const DarkDefault: Story = {

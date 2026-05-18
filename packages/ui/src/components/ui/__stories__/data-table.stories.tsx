@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ColumnDef } from '@tanstack/react-table'
-import { userEvent, waitFor, within } from '@storybook/test'
+import { userEvent, waitFor, within } from 'storybook/test'
 import { Checkbox } from '../checkbox'
 import { Button } from '../button'
 import { DataTable, DataTableColumnHeader, DataTablePagination, DataTableToolbar } from '../data-table'

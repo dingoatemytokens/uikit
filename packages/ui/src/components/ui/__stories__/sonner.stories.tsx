@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { userEvent, waitFor, within } from '@storybook/test'
+import { userEvent, waitFor, within } from 'storybook/test'
 import { Toaster } from '../sonner'
 import { Button } from '../button'
 import { toast } from 'sonner'
