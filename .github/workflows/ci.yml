@@ -70,17 +70,5 @@ jobs:
       - name: Build
         run: pnpm -r build
 
-      # Typecheck is scoped to the published library for now — apps still
-      # have pre-existing source-level type errors. Widen this to
-      # `pnpm -r typecheck` after the script vocabulary unification and
-      # apps/demos typecheck-fix sibling PRs land.
-      - name: Typecheck UI library
-        run: pnpm --filter @acronis-platform/shadcn-uikit run type-check
-
-      # Build runs before Test so the topological build order (ui → demo / docs)
-      # is exercised against the same lockfile we just installed from.
-      - name: Build
-        run: pnpm -r build
-
       - name: Test
         run: pnpm -r test
