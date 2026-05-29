@@ -7,20 +7,45 @@ Before submitting your contribution, please make sure to take a moment to read t
 
 We welcome contributions in any form, including but not limited to the following:
 
-* Problem suggestions
-* Improve documentation
-* Provide examples
-* Improve testing
-* Improve components
-* Submit PR
-* Participate in discussions
-* Share project
+- Problem suggestions
+- Improve documentation
+- Provide examples
+- Improve testing
+- Improve components
+- Submit PR
+- Participate in discussions
+- Share project
 
 ## Issue Reporting
 
 You can file a ticket for the bug/issue you found through [Issues](https://github.com/acronis/shadcn-uikit/issues) under project **UI component library**.
 A clear reproduce steps will be very helpful to identify the root cause.
 For the complicated scenario, you can also create an example in the [Sandbox](https://github.com/acronis/shadcn-uikit/sandbox/index.vue), or provide the example code in the ticket.
+
+## Working in the monorepo
+
+This repo is a pnpm workspace with four packages: the published UI library
+(`packages/legacy/ui`), a Vite demo (`apps/demo`), a shared demo components
+package (`apps/demos`), and a Fumadocs site (`apps/docs`).
+
+Every workspace exposes the same script vocabulary, so you have two equally
+valid styles for any task:
+
+```bash
+# Run a script in every workspace, in topological order
+pnpm -r build
+pnpm -r typecheck
+pnpm -r lint
+
+# Or run it for a single workspace
+pnpm --filter @acronis-platform/shadcn-uikit-docs dev
+pnpm --filter @acronis-platform/shadcn-uikit storybook
+```
+
+Shared dependency versions (React, TypeScript, ESLint, Vite, react-hook-form,
+etc.) are pinned in the `catalog:` block of `pnpm-workspace.yaml`. Workspaces
+reference them with `"catalog:"` in their `package.json`, so version bumps
+happen in exactly one place.
 
 ## Pull Request for Feature request/Bug Fixing/Improvements
 
@@ -31,7 +56,7 @@ Meanwhile, below a checklist for the items need to do before raised a pull reque
 and you can find the details for each point in the remaining part of this document:
 
 1. Fork [This repo](https://github.com/acronis/shadcn-uikit)
-2. Enter the local project root directory and use ```pnpm i``` to install dependencies.
+2. Enter the local project root directory and use `pnpm i` to install dependencies.
 3. Use `pnpm --filter @acronis-platform/shadcn-uikit-docs dev` to start the documentation app.
 4. Please pull the latest code before submitting to avoid file conflicts.
 5. Commit your changes with a clear commit message, please abide by it at the same time. [Commit Standard](https://acronis.github.io/ui-component-library/guide/commitlint.html)。
@@ -40,8 +65,10 @@ and you can find the details for each point in the remaining part of this docume
 8. Update visual regression test case (if applicable)
 9. Update performance test case (if applicable)
 10. Update component documentation to:
-   - Include the description of the feature's API
-   - Provide an example of the feature if needed
+
+- Include the description of the feature's API
+- Provide an example of the feature if needed
+
 11. Update component types for TypeScript support
 12. Run the test to ensure all lint/unit/regression/performance tests pass
 13. Submit a Pull Request。

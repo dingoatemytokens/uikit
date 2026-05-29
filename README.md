@@ -180,10 +180,10 @@ import '@acronis-platform/shadcn-uikit/styles';
 import '@acronis-platform/shadcn-uikit/styles/full';
 
 // Granular imports
-import '@acronis-platform/shadcn-uikit/styles/tokens';      // CSS variables only
-import '@acronis-platform/shadcn-uikit/styles/base';         // Reset + base styles
-import '@acronis-platform/shadcn-uikit/styles/components';   // Component styles only
-import '@acronis-platform/shadcn-uikit/styles/utilities';    // Tailwind utility classes
+import '@acronis-platform/shadcn-uikit/styles/tokens'; // CSS variables only
+import '@acronis-platform/shadcn-uikit/styles/base'; // Reset + base styles
+import '@acronis-platform/shadcn-uikit/styles/components'; // Component styles only
+import '@acronis-platform/shadcn-uikit/styles/utilities'; // Tailwind utility classes
 
 // Individual themes
 import '@acronis-platform/shadcn-uikit/styles/themes/acronis-default';
@@ -210,7 +210,11 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 import { cn } from '@acronis-platform/shadcn-uikit';
 
 // Merge class names
-const className = cn('base-class', condition && 'conditional-class', 'another-class');
+const className = cn(
+  'base-class',
+  condition && 'conditional-class',
+  'another-class'
+);
 ```
 
 ## ⚡ Tailwind CSS v4 — Notes for Consumers
@@ -276,7 +280,11 @@ No direct conflict. However, the pre-built CSS uses Tailwind v4's `@layer` casca
 Switch themes programmatically:
 
 ```typescript
-import { applyTheme, applyColorMode, toggleColorMode } from '@acronis-platform/shadcn-uikit';
+import {
+  applyTheme,
+  applyColorMode,
+  toggleColorMode,
+} from '@acronis-platform/shadcn-uikit';
 
 // Switch to ocean theme
 applyTheme('acronis-ocean');
@@ -308,11 +316,11 @@ applyNavVariant('ingram-micro', true, innerContainer ? [innerContainer] : []);
 
 Both `applyTheme` and `applyNavVariant` accept the same optional parameters:
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `theme` / `variant` | `ThemeName` / `WhiteLabelNavVariant` | — | The theme or variant to apply |
-| `persist` | `boolean` | `true` | Whether to persist the choice to `localStorage` |
-| `extraRoots` | `HTMLElement[]` | `[]` | Additional elements to receive the same theme classes |
+| Parameter           | Type                                 | Default | Description                                           |
+| ------------------- | ------------------------------------ | ------- | ----------------------------------------------------- |
+| `theme` / `variant` | `ThemeName` / `WhiteLabelNavVariant` | —       | The theme or variant to apply                         |
+| `persist`           | `boolean`                            | `true`  | Whether to persist the choice to `localStorage`       |
+| `extraRoots`        | `HTMLElement[]`                      | `[]`    | Additional elements to receive the same theme classes |
 
 ### Using Alternative Themes
 
@@ -349,6 +357,16 @@ shadcn-uikit/
 │   └── legacy/
 │       └── ui/                # Published library (@acronis-platform/shadcn-uikit)
 │           ├── src/           # React components, hooks, lib, styles, types, utils
+│           │   ├── components/    # React components
+│           │   ├── hooks/         # Custom React hooks
+│           │   ├── lib/           # Utility functions
+│           │   ├── styles/        # SCSS source — themes, tokens, base
+│           │   │   ├── themes/    # Theme SCSS files + template
+│           │   │   └── tokens/    # Design tokens (CSS variables)
+│           │   ├── types/         # Shared TypeScript types
+│           │   ├── utils/         # Additional utilities
+│           │   ├── index.ts       # Main entry (all exports)
+│           │   └── react.ts       # React-only entry
 │           ├── docker-compose.storybook.yml      # Storybook visual-regression compose
 │           ├── Dockerfile.storybook              # ... and its image
 │           └── package.json
@@ -365,17 +383,17 @@ shadcn-uikit/
 All commands run from the repo root unless noted otherwise. Every workspace
 exposes the same vocabulary, so `pnpm -r <name>` is reliable.
 
-| Script | What it does |
-|---|---|
-| `pnpm -r dev` / `pnpm --filter <name> dev` | Run the dev server / watcher for one or all workspaces |
-| `pnpm -r build` | Build every package in topological order (ui → demo/docs) |
-| `pnpm -r test` | Run the test suite once across all workspaces |
-| `pnpm -r test:watch` | Run tests in watch mode |
-| `pnpm -r lint` / `pnpm -r lint:fix` | ESLint across all workspaces |
-| `pnpm -r typecheck` | `tsc --noEmit` across all workspaces |
-| `pnpm format` / `pnpm format:check` | Prettier write / check from the repo root |
-| `pnpm -r clean` | Delete `dist/`, `.next/`, `storybook-static/`, etc. |
-| `pnpm changeset` | Add a changeset for a PR that changes the published UI library |
+| Script                                     | What it does                                                   |
+| ------------------------------------------ | -------------------------------------------------------------- |
+| `pnpm -r dev` / `pnpm --filter <name> dev` | Run the dev server / watcher for one or all workspaces         |
+| `pnpm -r build`                            | Build every package in topological order (ui → demo/docs)      |
+| `pnpm -r test`                             | Run the test suite once across all workspaces                  |
+| `pnpm -r test:watch`                       | Run tests in watch mode                                        |
+| `pnpm -r lint` / `pnpm -r lint:fix`        | ESLint across all workspaces                                   |
+| `pnpm -r typecheck`                        | `tsc --noEmit` across all workspaces                           |
+| `pnpm format` / `pnpm format:check`        | Prettier write / check from the repo root                      |
+| `pnpm -r clean`                            | Delete `dist/`, `.next/`, `storybook-static/`, etc.            |
+| `pnpm changeset`                           | Add a changeset for a PR that changes the published UI library |
 
 To run a single workspace, prefix with `pnpm --filter <package-name>`:
 
@@ -412,7 +430,13 @@ import { initializeThemeSystem } from '@acronis-platform/shadcn-uikit';
 initializeThemeSystem();
 
 // App.tsx
-import { Button, Card, CardHeader, CardTitle, CardContent } from '@acronis-platform/shadcn-uikit';
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from '@acronis-platform/shadcn-uikit';
 
 export function App() {
   return (
