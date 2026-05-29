@@ -25,14 +25,14 @@ For the complicated scenario, you can also create an example in the [Sandbox](ht
 ## Pull Request for Feature request/Bug Fixing/Improvements
 
 Pull requests are welcomed for bug fixing/improvement in Acronis UI Component Library.
-You can find a lot of useful information (e.g. "Directory structure" and "Setup and configuration") about the Acronis UI Component Library in the [README.md](Link to setup).
-General [CI Git Workflow](Link to git docs) need to be followed when you prepare a pull request.
+You can find setup and structure information about the Acronis UI Component Library in the [README.md](README.md).
+Follow this guide's branching, pull request, and commit conventions when you prepare a pull request.
 Meanwhile, below a checklist for the items need to do before raised a pull request,
 and you can find the details for each point in the remaining part of this document:
 
 1. Fork [This repo](https://github.com/acronis/shadcn-uikit)
 2. Enter the local project root directory and use ```pnpm i``` to install dependencies.
-3. Use ```pnpm run docs:dev``` to start the project and view the document.
+3. Use `pnpm --filter @acronis-platform/shadcn-uikit-docs dev` to start the documentation app.
 4. Please pull the latest code before submitting to avoid file conflicts.
 5. Commit your changes with a clear commit message, please abide by it at the same time. [Commit Standard](https://acronis.github.io/ui-component-library/guide/commitlint.html)。
 6. Ensure the code follows [Style Guide for Front-end development](Link to styleguide).
@@ -49,7 +49,7 @@ and you can find the details for each point in the remaining part of this docume
 ### Pull Request
 
 - Pull request should give details on what has been changed and why.
-- Pull request should be small and focused on a single change. A pull request with more than 250 lines of code tend to tkake more than 1 hour to review.
+- Pull request should be small and focused on a single change. A pull request with more than 250 lines of code tend to take more than 1 hour to review.
 - The title should be self-explanatory, describing what the pull request does.
 - The description should provide a clear explanation of the changes made and why they were made.
 
@@ -88,7 +88,7 @@ You can find more information about performance tests in the [Performance tests 
 
 The documentation for each component is located at [`apps/docs`](https://github.com/acronis/shadcn-uikit/tree/main/apps/docs) using Markdown/MDX format.
 The implementation examples are located at [`apps/demos`](https://github.com/acronis/shadcn-uikit/tree/main/apps/demos).
-For internal documentation we use Vitepress, you can find more information about Vitepress in the [Vitepress documentation](https://vitepress.dev/).
+For internal documentation we use Next.js with Fumadocs; see the [Fumadocs documentation](https://fumadocs.dev/docs/ui) for more information.
 
 Each document consists of highlights of the API(props, slots, events) with examples and complete details of these components.
 If the change in PR including the new API or API updates, you will need to update the API table at the end of the document.
