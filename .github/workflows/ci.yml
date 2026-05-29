@@ -58,7 +58,7 @@ jobs:
       - name: Typecheck UI library
         run: pnpm --filter @acronis-platform/shadcn-uikit run type-check
 
-      # Build runs last so the topological build order (ui → demo / docs)
+      # Build runs before Test so the topological build order (ui → demo / docs)
       # is exercised against the same lockfile we just installed from.
       - name: Build
         run: pnpm -r build
