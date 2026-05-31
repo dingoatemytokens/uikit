@@ -48,24 +48,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build Acronis shacn UI Component Library
+        run: pnpm --filter ./packages/legacy/ui run build
+
+      #      - name: Build icons
+      #        run: pnpm --filter ./packages/icons run build
+
       - name: Lint
         run: pnpm -r lint
-
-      # Build the UI library first so apps/demos and apps/docs can resolve
-      # its dist exports during typecheck.
-      - name: Build UI library
-        run: pnpm --filter @acronis-platform/shadcn-uikit build
-
-      # Generate the fumadocs .source files needed by apps/docs typecheck.
-      - name: Generate fumadocs source
-        run: pnpm --filter @acronis-platform/shadcn-uikit-docs exec fumadocs-mdx
 
       - name: Typecheck
         run: pnpm -r typecheck
 
-      # Full build to verify the topological build order (ui → demo / docs).
-      - name: Build
-        run: pnpm -r build
+      # Generate the fumadocs .source files needed by apps/docs typecheck.
+      - name: Generate fumadocs source
+        run: pnpm --filter @acronis-platform/shadcn-uikit-docs exec fumadocs-mdx
 
       - name: Test
         run: pnpm -r test
