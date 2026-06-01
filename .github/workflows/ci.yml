@@ -60,9 +60,10 @@ jobs:
       - name: Typecheck
         run: pnpm -r typecheck
 
-      # Generate the fumadocs .source files needed by apps/docs typecheck.
-      - name: Generate fumadocs source
-        run: pnpm --filter @acronis-platform/shadcn-uikit-docs exec fumadocs-mdx
+      # Build runs last so the topological build order (ui → demo / docs)
+      # is exercised against the same lockfile we just installed from.
+      - name: Build
+        run: pnpm -r build
 
       - name: Test
         run: pnpm -r test
