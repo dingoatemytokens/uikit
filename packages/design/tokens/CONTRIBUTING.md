@@ -4,6 +4,7 @@ This guide covers the day-to-day authoring tasks: keeping the tokens and Figma i
 
 > [!IMPORTANT]
 > The token JSON under `tokens/` is the **source of truth** — it's what's committed and what consumers read. **Figma is never the source of truth**; it's a peer surface designers work in. The two are kept in step by an LLM (Claude) via the [Figma Console MCP](https://github.com/southleft/figma-console-mcp), and changes can flow **either direction** — see [Sync pipelines](#sync-pipelines). Either way it ends with `pnpm validate` → commit.
+
 ## Before you start
 
 - **Set up Figma access** (one-time) — a `FIGMA_ACCESS_TOKEN_ACRONIS` env var + the Figma Console MCP. Step-by-step in the README [Setup](./README.md#setup).
@@ -13,10 +14,10 @@ This guide covers the day-to-day authoring tasks: keeping the tokens and Figma i
 ## Sync pipelines
 
 The JSON under `tokens/` is the **source of truth**; Figma is a peer surface. An LLM (Claude) keeps them in step through the [Figma Console MCP](https://github.com/southleft/figma-console-mcp). Changes flow in **either direction** — pick the one that matches where the change originated. Both end with `pnpm validate` → commit ([Validating](#validating)).
-| Pipeline                                            | Use when                       | Tools                                   |
+| Pipeline | Use when | Tools |
 | --------------------------------------------------- | ------------------------------ | --------------------------------------- |
-| [Figma → JSON](#figma--json-designer-changed-figma) | a designer changed Figma       | LLM + Figma Console + JS helper scripts |
-| [JSON → Figma](#json--figma-change-decided-in-code) | the change was decided in code | LLM + Figma Console                     |
+| [Figma → JSON](#figma--json-designer-changed-figma) | a designer changed Figma | LLM + Figma Console + JS helper scripts |
+| [JSON → Figma](#json--figma-change-decided-in-code) | the change was decided in code | LLM + Figma Console |
 
 ### Figma → JSON (designer changed Figma)
 
@@ -50,7 +51,7 @@ node .tmp/scripts/figma-to-semantic.mjs
 node .tmp/scripts/figma-to-components.mjs
 ```
 
-They write `tokens/primitives.json`, `tokens/semantic.json`, and `tokens/components.json`, and are the canonical formatter for each — don't reformat the output. Finish with `pnpm validate` and review `git diff tokens/tokens/`: only the tokens you touched should have changed.
+They write `tokens/primitives.json`, `tokens/semantic.json`, and `tokens/components.json`, and are the canonical formatter for each — don't reformat the output. Finish with `pnpm validate` and review `git diff tokens/`: only the tokens you touched should have changed.
 
 ### JSON → Figma (change decided in code)
 
@@ -78,7 +79,7 @@ See [`context/manifest.md`](./context/manifest.md) for the list of current and p
 
 These are schema changes — coordinated edits in three places, all in the same commit:
 
-1. **`tokens/schemas/tokens.schema.json`** — extend the `TokenType` enum (new `$type`) or the `Extensions` `properties` map (new `$extensions` key).
+1. **`schemas/tokens.schema.json`** — extend the `TokenType` enum (new `$type`) or the `Extensions` `properties` map (new `$extensions` key).
 2. **`context/spec.md`** (and [`context/spec.md`](./context/spec.md) for any cross-package implications) — document the new key's semantics and reserved-namespace rules.
 3. **Generator(s)** — update whichever of `.tmp/scripts/figma-to-*.mjs` emits the new shape so the next sync produces it.
 

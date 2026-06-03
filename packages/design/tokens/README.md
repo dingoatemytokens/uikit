@@ -176,7 +176,7 @@ tokens/
 
 ## Setup
 
-The JSON files under `tokens/tokens/` are the **source of truth**. You only need this setup if you want to **update tokens from Figma** (change a value, add a token). If you just _consume_ the published JSON, skip it — `pnpm install` is all you need.
+The JSON files under `tokens/` are the **source of truth**. You only need this setup if you want to **update tokens from Figma** (change a value, add a token). If you just _consume_ the published JSON, skip it — `pnpm install` is all you need.
 
 Updates flow from Figma through an AI assistant (Claude) that talks to Figma via the **[Figma Console MCP](https://github.com/southleft/figma-console-mcp)**. Two one-time steps:
 
