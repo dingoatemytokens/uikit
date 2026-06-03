@@ -68,7 +68,7 @@ Purpose-based mappings that define color meaning:
 Maps semantic tokens to Tailwind utility classes:
 
 ```javascript
-// packages/legacy/ui/tailwind.config.js
+// packages/ui-legacy/tailwind.config.js
 theme: {
   extend: {
     colors: {
@@ -88,10 +88,10 @@ theme: {
 
 ### Benefits of This Architecture
 
-✅ **Clear separation of concerns** - Each layer has a specific purpose  
-✅ **Easy theming** - Change primitives or semantic mappings without touching components  
-✅ **Dark mode support** - Override semantic tokens in `.dark` class  
-✅ **Type safety** - HSL format works with Tailwind  
+✅ **Clear separation of concerns** - Each layer has a specific purpose
+✅ **Easy theming** - Change primitives or semantic mappings without touching components
+✅ **Dark mode support** - Override semantic tokens in `.dark` class
+✅ **Type safety** - HSL format works with Tailwind
 ✅ **Figma alignment** - Primitives match design system exactly
 
 ## Demo Playground System (Development Tool)
@@ -136,9 +136,9 @@ export const THEME_COLOR_MAPPINGS: ThemeColorMapping[] = [
 
 ### Playground Benefits
 
-✅ **Single source of truth** - Change once, updates everywhere  
-✅ **Type safety** - TypeScript validates all mappings  
-✅ **Live preview** - See theme changes instantly  
+✅ **Single source of truth** - Change once, updates everywhere
+✅ **Type safety** - TypeScript validates all mappings
+✅ **Live preview** - See theme changes instantly
 ✅ **No duplication** - Mappings defined once
 
 ### Runtime Implementation
@@ -163,9 +163,9 @@ function applyColorPalette(root: HTMLElement, palette: ColorPalette): void {
 
 ### UI Package (Production)
 
-- `packages/legacy/ui/src/styles/tokens/primitives.scss` - Layer 1: Primitive tokens
-- `packages/legacy/ui/src/styles/tokens/semantic.scss` - Layer 2: Semantic tokens
-- `packages/legacy/ui/tailwind.config.js` - Layer 3: Tailwind config
+- `packages/ui-legacy/src/styles/tokens/primitives.scss` - Layer 1: Primitive tokens
+- `packages/ui-legacy/src/styles/tokens/semantic.scss` - Layer 2: Semantic tokens
+- `packages/ui-legacy/tailwind.config.js` - Layer 3: Tailwind config
 
 ### Demo Package (Playground)
 
@@ -177,9 +177,9 @@ function applyColorPalette(root: HTMLElement, palette: ColorPalette): void {
 
 The current **primitives → semantic → Tailwind** order is **excellent** and follows industry best practices:
 
-✅ **Scalable** - Easy to add new themes or color schemes  
-✅ **Maintainable** - Changes cascade through layers automatically  
-✅ **Flexible** - Can swap entire color systems by changing primitives  
+✅ **Scalable** - Easy to add new themes or color schemes
+✅ **Maintainable** - Changes cascade through layers automatically
+✅ **Flexible** - Can swap entire color systems by changing primitives
 ✅ **Standard** - Matches design token methodology used by major design systems
 
 **Recommendation**: Keep this architecture. It's well-designed and production-ready.
@@ -199,7 +199,7 @@ The UI package currently has:
 Create separate CSS files for each color scheme that can be applied via classes:
 
 ```scss
-// packages/legacy/ui/src/styles/themes/acronis-default.scss
+// packages/ui-legacy/src/styles/themes/acronis-default.scss
 .theme-acronis-default {
   &:root,
   &.light {
@@ -214,7 +214,7 @@ Create separate CSS files for each color scheme that can be applied via classes:
   }
 }
 
-// packages/legacy/ui/src/styles/themes/acronis-blue.scss
+// packages/ui-legacy/src/styles/themes/acronis-blue.scss
 .theme-acronis-blue {
   &:root,
   &.light {
@@ -223,7 +223,7 @@ Create separate CSS files for each color scheme that can be applied via classes:
   }
 }
 
-// packages/legacy/ui/src/styles/themes/custom.scss
+// packages/ui-legacy/src/styles/themes/custom.scss
 .theme-custom {
   // Consumer can override this file
 }
@@ -234,7 +234,7 @@ Create separate CSS files for each color scheme that can be applied via classes:
 **1. Create theme files structure:**
 
 ```
-packages/legacy/ui/src/styles/themes/
+packages/ui-legacy/src/styles/themes/
 ├── index.scss           # Export all themes
 ├── acronis-default.scss # Current Acronis theme
 ├── acronis-ocean.scss   # Alternative blue theme
@@ -256,7 +256,7 @@ packages/legacy/ui/src/styles/themes/
 **3. Provide theme switcher utility:**
 
 ```typescript
-// packages/legacy/ui/src/utils/theme-switcher.ts
+// packages/ui-legacy/src/utils/theme-switcher.ts
 export function applyTheme(
   theme: 'acronis-default' | 'acronis-ocean' | 'custom'
 ) {
@@ -306,10 +306,10 @@ applyColorMode('dark');
 
 ### Benefits of This Approach
 
-✅ **Zero JS overhead** - Themes are pure CSS  
-✅ **SSR compatible** - Works with server-side rendering  
-✅ **Tree-shakeable** - Import only themes you need  
-✅ **Fast switching** - Just change a class name  
-✅ **Easy customization** - Override CSS variables  
-✅ **Multiple schemes** - Ship 2-3 pre-built themes  
+✅ **Zero JS overhead** - Themes are pure CSS
+✅ **SSR compatible** - Works with server-side rendering
+✅ **Tree-shakeable** - Import only themes you need
+✅ **Fast switching** - Just change a class name
+✅ **Easy customization** - Override CSS variables
+✅ **Multiple schemes** - Ship 2-3 pre-built themes
 ✅ **Developer-friendly** - Clear documentation and templates

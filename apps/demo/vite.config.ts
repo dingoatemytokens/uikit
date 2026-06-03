@@ -25,7 +25,7 @@ const resolveAtAlias = (): Plugin => ({
       const isFromUikit = normalizedImporter.includes('/ui/src/');
       const isFromDemos = normalizedImporter.includes('/demos/src/');
       const basePath = isFromUikit
-        ? source.replace('@/', '../../packages/legacy/ui/src/')
+        ? source.replace('@/', '../../packages/ui-legacy/src/')
         : isFromDemos
           ? source.replace('@/', '../demos/src/')
           : source.replace('@/', './src/');
@@ -87,20 +87,20 @@ export default defineConfig(({ mode }) => ({
       ),
       '@acronis-platform/shadcn-uikit/react': resolve(
         __dirname,
-        '../../packages/legacy/ui/src/react.ts'
+        '../../packages/ui-legacy/src/react.ts'
       ),
       '@acronis-platform/shadcn-uikit/styles': resolve(
         __dirname,
-        '../../packages/legacy/ui/src/styles/index.scss'
+        '../../packages/ui-legacy/src/styles/index.scss'
       ),
       '@acronis-platform/shadcn-uikit': resolve(
         __dirname,
-        '../../packages/legacy/ui/src/react.ts'
+        '../../packages/ui-legacy/src/react.ts'
       ),
-      '@uikit-utils': resolve(__dirname, '../../packages/legacy/ui/src/utils'),
+      '@uikit-utils': resolve(__dirname, '../../packages/ui-legacy/src/utils'),
       'tw-animate-css/dist/tw-animate.css': resolve(
         __dirname,
-        '../../packages/legacy/ui/node_modules/tw-animate-css/dist/tw-animate.css'
+        '../../packages/ui-legacy/node_modules/tw-animate-css/dist/tw-animate.css'
       ),
     },
     extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],

@@ -36,7 +36,7 @@ The only scripts that actually run are `lint`, `lint:fix`, and
 - **TanStack Form** + **TanStack zod adapter** alongside **react-hook-form**
   — both are showcased to compare patterns.
 - **zod 3** (pinned at `3.25.76`). **Intentionally different from**
-  `apps/demo` and `packages/legacy/ui`, which are on zod 4. The form
+  `apps/demo` and `packages/ui-legacy`, which are on zod 4. The form
   libraries' adapters in this workspace haven't been upgraded yet.
   Aligning is a tracked follow-up — see the catalog comment in
   `pnpm-workspace.yaml`. Don't try to bump it in passing.

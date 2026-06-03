@@ -19,7 +19,7 @@ If a demo is reusable across both this app and `apps/docs`, build it in
 ## What does NOT go here
 
 - Tests. The `test` script is a no-op by design. Coverage for library
-  behavior belongs in `packages/legacy/ui`'s Vitest + Storybook suites.
+  behavior belongs in `packages/ui-legacy`'s Vitest + Storybook suites.
 - Reusable demo components. Those live in `apps/demos`.
 - Production logic. This app is for **demonstration**, not real users.
 
@@ -49,7 +49,7 @@ is no automated test suite by design.
 
 ## Dependency version note
 
-This workspace is on **zod 4** (matching `packages/legacy/ui`). The
+This workspace is on **zod 4** (matching `packages/ui-legacy`). The
 sibling `apps/demos` workspace is still on zod 3 — don't try to align
 the two in passing. See `pnpm-workspace.yaml`'s catalog comment.
 

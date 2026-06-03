@@ -8,10 +8,10 @@
     "paths": {
       "@/*": ["./src/*"],
       "@acronis-platform/shadcn-uikit": [
-        "../../packages/legacy/ui/dist/index.d.ts"
+        "../../packages/ui-legacy/dist/index.d.ts"
       ],
       "@acronis-platform/shadcn-uikit/react": [
-        "../../packages/legacy/ui/dist/react.d.ts"
+        "../../packages/ui-legacy/dist/react.d.ts"
       ]
     }
   },

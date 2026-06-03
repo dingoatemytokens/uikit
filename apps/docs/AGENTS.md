@@ -50,7 +50,7 @@ because `process.cwd()` is `apps/docs/` at build time.
 `AutoTypeTable` paths are **relative to `apps/docs/`**:
 
 ```
-<AutoTypeTable path="../../packages/legacy/ui/src/components/ui/button.tsx" name="ButtonProps" />
+<AutoTypeTable path="../../packages/ui-legacy/src/components/ui/button.tsx" name="ButtonProps" />
 ```
 
 For compound components or types that `AutoTypeTable` cannot resolve
@@ -58,7 +58,7 @@ For compound components or types that `AutoTypeTable` cannot resolve
 `.docs.ts` companion file alongside the component source:
 
 ```
-<AutoTypeTable path="../../packages/legacy/ui/src/components/ui/dialog.docs.ts" name="DialogContentProps" />
+<AutoTypeTable path="../../packages/ui-legacy/src/components/ui/dialog.docs.ts" name="DialogContentProps" />
 ```
 
 8 `.docs.ts` companions exist today. Only create a new one when

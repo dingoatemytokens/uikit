@@ -62,7 +62,7 @@ demo wired in.
 ## Dependency version note
 
 This workspace pins **zod 3** (`3.25.76`). `apps/demo` and
-`packages/legacy/ui` are on **zod 4**. The form library adapters in
+`packages/ui-legacy` are on **zod 4**. The form library adapters in
 this workspace (`@tanstack/zod-form-adapter`) haven't been upgraded
 yet. **Don't bump zod here in passing** — it's a tracked follow-up.
 See the catalog comment in `pnpm-workspace.yaml`.

@@ -22,7 +22,7 @@ easy to get wrong.
 - Reusable demo components themselves. Those live in `apps/demos`.
   This workspace only wraps them (with `'use client'`) and references
   them from MDX.
-- Library source code. That lives in `packages/legacy/ui`.
+- Library source code. That lives in `packages/ui-legacy`.
 
 ## Workflow for a new component doc page
 
@@ -43,7 +43,7 @@ easy to get wrong.
    `apps/docs/`**:
    ```mdx
    <AutoTypeTable
-     path="../../packages/legacy/ui/src/components/ui/button.tsx"
+     path="../../packages/ui-legacy/src/components/ui/button.tsx"
      name="ButtonProps"
    />
    ```

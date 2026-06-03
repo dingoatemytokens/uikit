@@ -15,15 +15,15 @@
     "paths": {
       "@/*": ["./src/*"],
       "@acronis-platform/shadcn-uikit": [
-        "../../packages/legacy/ui/dist/index.d.ts"
+        "../../packages/ui-legacy/dist/index.d.ts"
       ],
       "@acronis-platform/shadcn-uikit/react": [
-        "../../packages/legacy/ui/dist/react.d.ts"
+        "../../packages/ui-legacy/dist/react.d.ts"
       ],
       "@acronis-platform/shadcn-uikit/styles": [
-        "../../packages/legacy/ui/src/styles/globals.css"
+        "../../packages/ui-legacy/src/styles/globals.css"
       ],
-      "@uikit-utils/*": ["../../packages/legacy/ui/dist/utils/*"]
+      "@uikit-utils/*": ["../../packages/ui-legacy/dist/utils/*"]
     }
   },
   "include": ["src"],
