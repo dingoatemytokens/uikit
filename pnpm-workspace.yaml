@@ -13,6 +13,10 @@ catalog:
   '@types/react-dom': 19.2.3
   '@types/node': 25.9.1
 
+  # Base UI — primitive set for the next-gen packages/ui-react library
+  # (a direct dependency there). packages/ui-legacy keeps it as a peer.
+  '@base-ui/react': 1.4.1
+
   # Toolchain
   typescript: 6.0.3
   eslint: 9.39.4
@@ -51,6 +55,10 @@ catalog:
   ajv: 8.17.1
   ajv-cli: 5.0.0
   ajv-formats: 3.0.1
+
+  # Token build — packages/design/theme transforms @acronis-platform/tokens
+  # (DTCG JSON) into CSS/SCSS/JS artifacts.
+  style-dictionary: 4.4.0
 
 # Pin transitive deps that we don't want pnpm to bump.
 overrides:
