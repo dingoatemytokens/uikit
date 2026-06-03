@@ -149,7 +149,7 @@ The only unit today is `px`. The enum is intentionally narrow; widening it is a 
 pnpm validate
 ```
 
-Run this from `packages/design/assets/` (or `pnpm --filter @acronis-platform/design-assets validate` from the repo root) before committing. It catches:
+Run this from `packages/design-assets/` (or `pnpm --filter @acronis-platform/design-assets validate` from the repo root) before committing. It catches:
 
 - Manifests that don't conform to `pack.schema.json` (missing required keys, wrong shapes, invalid asset ids, invalid `$file` paths).
 - Rules that don't conform to `rule.schema.json`.

@@ -1,4 +1,4 @@
-# AGENTS.md — `packages/design/assets`
+# AGENTS.md — `packages/design-assets`
 
 `@acronis-platform/design-assets` — a **published** data-only workspace:
 DTCG-divergent JSON manifests for icons and illustrations, plus the
@@ -10,7 +10,7 @@ DTCG-conformant: project fields live at top-level keys (`values`,
 `platforms`, `metadata`), not inside `$extensions.com.acronis.*`.
 
 Repo-wide rules (TypeScript, file naming, Conventional Commits,
-Changesets) live in the repo root's [`../../../context/`](../../../context/)
+Changesets) live in the repo root's [`../../context/`](../../context/)
 and apply on top. This file documents only what is specific to this
 workspace; the deeper conceptual reference lives in
 [`./context/`](./context/).
@@ -65,7 +65,7 @@ full license text there (see [`CONTRIBUTING.md`](./CONTRIBUTING.md)).
 
 This is a **published** workspace, so a change to its published surface
 (`packs/`, `rules/`, `schemas/`, the `exports` map) needs a changeset.
-See [`../../../context/releasing.md`](../../../context/releasing.md).
+See [`../../context/releasing.md`](../../context/releasing.md).
 
 ## Conventions for new context files
 

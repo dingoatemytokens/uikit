@@ -1,4 +1,4 @@
-# AGENTS.md — `packages/design/tokens`
+# AGENTS.md — `packages/design-tokens`
 
 `@acronis-platform/design-tokens` — a **published** data-only workspace:
 DTCG-2025.10-conformant design-token JSON. The files under
@@ -7,7 +7,7 @@ DTCG-2025.10-conformant design-token JSON. The files under
 DTCG-2025-10 spec snapshot under `context/DTCG-2025-10/`.
 
 Repo-wide rules (TypeScript, file naming, Conventional Commits,
-Changesets) live in the repo root's [`../../../context/`](../../../context/)
+Changesets) live in the repo root's [`../../context/`](../../context/)
 and apply on top. This file documents only what is specific to this
 workspace; the deeper conceptual reference lives in
 [`./context/`](./context/).
@@ -32,7 +32,7 @@ ajv validation so `pnpm -r test` covers this workspace in CI.
 `.tmp/scripts/` (the Figma pull/post-process generators) is committed; `.tmp/figma-tokens/` holds local Figma snapshots that are **not** committed and won't be present in a fresh clone, so any helper script that reads from it will fail until you pull them. If you need that data and it isn't there:
 
 1. `mkdir -p .tmp/figma-tokens` (run from this package directory).
-2. Pull the snapshot via the **Figma Console MCP** server (`figma-console` in [`.mcp.json`](./.mcp.json) in this package; launch Claude from `packages/design/tokens/` so it loads) — never hand-author the snapshot contents.
+2. Pull the snapshot via the **Figma Console MCP** server (`figma-console` in [`.mcp.json`](./.mcp.json) in this package; launch Claude from `packages/design-tokens/` so it loads) — never hand-author the snapshot contents.
 3. Expected files and exact pull procedure: [`context/figma-sync.md`](context/figma-sync.md).
 4. If the MCP server is unavailable, stop and ask the user — do not fabricate snapshot data. The JSON under `tokens/` is the source of truth and may be edited, but don't hand-patch it to stand in for a Figma snapshot you couldn't fetch.
 
@@ -64,7 +64,7 @@ Authoritative for all format questions. Read the relevant module's `index.md` (w
 
 This is a **published** workspace, so a change to its published surface
 (`tokens/`, `schemas/`, the `exports` map) needs a changeset. See
-[`../../../context/releasing.md`](../../../context/releasing.md).
+[`../../context/releasing.md`](../../context/releasing.md).
 
 ## Conventions for new context files
 
