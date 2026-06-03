@@ -282,7 +282,7 @@ Pack-level inheritance exists for `values` only (see [Pack-level `values`](#pack
 
 ## Platform scope
 
-> ⚠️ This enum is mirrored in `@acronis-platform/tokens`; the two MUST stay in sync — a
+> ⚠️ This enum is mirrored in `@acronis-platform/design-tokens`; the two MUST stay in sync — a
 > change here requires the same change there.
 
 Platform scope declares which consumers an asset targets so downstream tooling can route correctly. Stored at the top-level `platforms` key on each Asset, sibling to `values` and `metadata`:

@@ -1,6 +1,6 @@
 # Packs
 
-The catalog of Packs in `@acronis-platform/assets`: the Packs that exist today and where
+The catalog of Packs in `@acronis-platform/design-assets`: the Packs that exist today and where
 their manifests live, how their files are laid out on disk, and the naming rules
 for ids and files.
 
@@ -120,7 +120,7 @@ sibling under `packs/` — but Assets within it stay flat.
 
 ## Naming conventions
 
-Rules for ids, filenames, JSON keys, and `$type` values in `@acronis-platform/assets`.
+Rules for ids, filenames, JSON keys, and `$type` values in `@acronis-platform/design-assets`.
 
 ### Ids (asset ids, pack ids, rule ids, etc.)
 

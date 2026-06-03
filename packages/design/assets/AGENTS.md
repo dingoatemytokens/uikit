@@ -1,6 +1,6 @@
 # AGENTS.md — `packages/design/assets`
 
-`@acronis-platform/assets` — a **published** data-only workspace:
+`@acronis-platform/design-assets` — a **published** data-only workspace:
 DTCG-divergent JSON manifests for icons and illustrations, plus the
 bundled icon/illustration binaries they point at. No components, no
 build, no runtime API — it ships data.
@@ -20,8 +20,8 @@ workspace; the deeper conceptual reference lives in
 This is the only script that does real work. From the repo root:
 
 ```bash
-pnpm --filter @acronis-platform/assets test       # alias for validate
-pnpm --filter @acronis-platform/assets validate    # ajv-compiles both schemas, validates packs/*.json and rules/*.json
+pnpm --filter @acronis-platform/design-assets test       # alias for validate
+pnpm --filter @acronis-platform/design-assets validate    # ajv-compiles both schemas, validates packs/*.json and rules/*.json
 ```
 
 `build` / `dev` / `clean` / `lint` / `typecheck` are intentional no-ops

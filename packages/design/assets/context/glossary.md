@@ -7,7 +7,7 @@ Vocabulary used throughout this package. Other context files use these terms pre
 
 ## Schema
 
-- **`$schema`** — the per-manifest discriminator URI (`../schemas/pack.schema.json` for packs, `../schemas/rule.schema.json` for rules). Identifies a file as an `@acronis-platform/assets` manifest rather than a DTCG token file; a generic DTCG consumer MUST refuse to parse it as DTCG. See [`spec.md`](./spec.md).
+- **`$schema`** — the per-manifest discriminator URI (`../schemas/pack.schema.json` for packs, `../schemas/rule.schema.json` for rules). Identifies a file as an `@acronis-platform/design-assets` manifest rather than a DTCG token file; a generic DTCG consumer MUST refuse to parse it as DTCG. See [`spec.md`](./spec.md).
 
 - **Vector / Raster** — the `$type` of a Pack or Asset. `vector` = SVG; `raster` = PNG / WebP / etc. Declared at the Pack root and inherits down the tree; an Asset MAY override its own `$type`.
 

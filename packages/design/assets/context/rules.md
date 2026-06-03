@@ -50,7 +50,7 @@ The unit enum is intentionally narrow. Widening it requires:
 
 1. Adding the new unit to the enum in [`../../assets/schemas/rule.schema.json`](../../assets/schemas/rule.schema.json).
 2. Documenting it here (semantics, when to use, conversion expectations for the future executor).
-3. A motivating consumer — usually a token in `@acronis-platform/tokens` that needs the rule to operate in non-px units.
+3. A motivating consumer — usually a token in `@acronis-platform/design-tokens` that needs the rule to operate in non-px units.
 
 ## Initial rules
 

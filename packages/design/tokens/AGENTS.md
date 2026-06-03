@@ -1,6 +1,6 @@
 # AGENTS.md — `packages/design/tokens`
 
-`@acronis-platform/tokens` — a **published** data-only workspace:
+`@acronis-platform/design-tokens` — a **published** data-only workspace:
 DTCG-2025.10-conformant design-token JSON. The files under
 `tokens/` are the source of truth; they're synced from Figma by
 [`context/figma-sync.md`](context/figma-sync.md). Consumes the vendored
@@ -17,8 +17,8 @@ workspace; the deeper conceptual reference lives in
 This is the only script that does real work. From the repo root:
 
 ```bash
-pnpm --filter @acronis-platform/tokens test       # alias for validate
-pnpm --filter @acronis-platform/tokens validate    # ajv-compiles the schema, validates the three token files
+pnpm --filter @acronis-platform/design-tokens test       # alias for validate
+pnpm --filter @acronis-platform/design-tokens validate    # ajv-compiles the schema, validates the three token files
 ```
 
 `--strict=false` is required for the tokens schema — a known ajv quirk from the `properties`/`patternProperties` overlap on `$extensions`. It is already baked into the `validate` script; keep it.
