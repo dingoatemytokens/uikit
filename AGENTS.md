@@ -89,7 +89,7 @@ Root-only scripts (from the repo root):
 `apps/demos` is intentionally source-only: its `dev`/`build` scripts are
 no-ops because the package is consumed via source-file exports. Tools
 follow the same vocabulary too: `tools/style-dictionary`'s real work is
-`build`, with `dev`/`test` as no-ops.
+`build` (with `test`/`test:watch` running vitest); only `dev` is a no-op.
 
 ## How agents should navigate this repo
 
