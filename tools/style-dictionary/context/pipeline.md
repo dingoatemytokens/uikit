@@ -16,14 +16,14 @@ The source tokens carry two independent mode axes (see
 
 So stage 1 splits **primitives by theme** but **semantic/components by brand**:
 
-| Output (`dist/pd-dtcg/`)  | Source file       | Mode key picked from `values` |
-| ------------------------- | ----------------- | ----------------------------- |
-| `primitives-light.json`   | `primitives.json` | `light`                       |
-| `primitives-dark.json`    | `primitives.json` | `dark`                        |
-| `semantic-acronis.json`   | `semantic.json`   | `acronis`                     |
-| `semantic-brand-b.json`   | `semantic.json`   | `brand-b`                     |
-| `components-acronis.json` | `components.json` | `acronis`                     |
-| `components-brand-b.json` | `components.json` | `brand-b`                     |
+| Output (`dist/tokens/pd-dtcg/`) | Source file       | Mode key picked from `values` |
+| ------------------------------- | ----------------- | ----------------------------- |
+| `primitives-light.json`         | `primitives.json` | `light`                       |
+| `primitives-dark.json`          | `primitives.json` | `dark`                        |
+| `semantic-acronis.json`         | `semantic.json`   | `acronis`                     |
+| `semantic-brand-b.json`         | `semantic.json`   | `brand-b`                     |
+| `components-acronis.json`       | `components.json` | `acronis`                     |
+| `components-brand-b.json`       | `components.json` | `brand-b`                     |
 
 Because semantic/component files are **not** split by theme, their values **keep
 their `{group.token}` aliases** (e.g. `"{palette.base}"`). Theme is applied in
@@ -32,10 +32,10 @@ and resolving the aliases against each. This is what yields a `light-dark()` pai
 per color without ever needing a `semantic-acronis-dark.json`. Aliases are
 **kept** in stage 1 and **flattened** only in stage 2.
 
-## Stage 1 — `buildDtcg` (in `index.ts`)
+## Stage 1 — `buildDtcg` (in `tokens.ts`)
 
-`buildDtcg` (in `index.ts`) reads the three token files through the
-`readTokenSource` reader (also in `index.ts`, a typed reader over the package's
+`buildDtcg` (in `tokens.ts`) reads the three token files through the
+`readTokenSource` reader (also in `tokens.ts`, a typed reader over the package's
 `exports`) and, for each view above, normalizes the tree for that view's mode and
 the build's `filter` enum value (`normalizeTree` in
 `hooks/preprocessors/acronis-dtcg.ts`) producing 100%-DTCG JSON. It serializes
@@ -60,9 +60,9 @@ A node is a **token** (not a group) if it carries `values`, `$value`, or
 `$extensions.com.acronis.units`; groups whose every child was omitted for a mode
 are themselves omitted.
 
-## Stage 2 — `buildCss` (in `index.ts`) + the `acronis/css` hooks
+## Stage 2 — `buildCss` (in `tokens.ts`) + the `acronis/css` hooks
 
-`buildCss` (in `index.ts`), for each brand, resolves the brand's
+`buildCss` (in `tokens.ts`), for each brand, resolves the brand's
 `semantic`/`components` views against **both** theme views of the primitives, then
 emits one CSS file via `StyleDictionary.buildAllPlatforms()` under the `<filter>-css`
 platform key. See [`output.md`](output.md) for the

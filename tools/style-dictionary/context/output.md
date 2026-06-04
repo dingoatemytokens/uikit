@@ -1,6 +1,6 @@
 # Output — the CSS contract
 
-Stage 2 writes one file per brand to `dist/pd-css/`: `acronis.css` and
+Stage 2 writes one file per brand to `dist/tokens/pd-css/`: `acronis.css` and
 `brand-b.css`. Each is self-contained: CSS custom properties for the color and
 dimension tokens of the semantic + component tiers (colors in both light and
 dark), followed by a block of typography utility classes.
@@ -17,7 +17,6 @@ inline and the browser resolves them from `color-scheme`:
 
   --colors-background-surface-primary: light-dark(rgb(255 255 255), rgb(0 0 0));
   --breadcrumb-gap: 4px;
-  --typography-body-default-font-size: 14px;
 }
 
 [data-theme='light'] {

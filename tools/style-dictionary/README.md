@@ -39,21 +39,28 @@ the group manifest is duplicated into each so every dir stands alone.
 
 Each CSS file is a single `:root` block using the modern `light-dark()` +
 `color-scheme` pattern, with path-derived variable names (no prefix), `rgb()`
-colors, `px` dimensions, and expanded typography. Only the **semantic** and
-**component** tiers are emitted — the palette is a resolution input, not output.
+colors, and `px` dimensions, followed by a block of `.typography-*` utility
+classes. Only the **semantic** and **component** tiers are emitted — the palette
+is a resolution input, not output.
 
 ```css
 :root {
   color-scheme: light dark;
   --colors-background-surface-primary: light-dark(rgb(255 255 255), rgb(0 0 0));
   --button-global-radius: 4px;
-  --typography-body-default-font-size: 14px;
 }
 [data-theme='light'] {
   color-scheme: light;
 }
 [data-theme='dark'] {
   color-scheme: dark;
+}
+
+.typography-body-default {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
 }
 ```
 
