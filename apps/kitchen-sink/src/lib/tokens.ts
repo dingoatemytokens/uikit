@@ -112,6 +112,51 @@ export const componentGroups: TokenGroup[] = COMPONENT_SOURCES.map((s) => ({
   tokens: tokenNames(s.css).map((name) => ({ name })),
 }));
 
+export interface TypographyStyle {
+  /** e.g. `ui-typography-body-default`. */
+  className: string;
+  /** First segment, e.g. `body`, `headings`, `link`. */
+  group: string;
+  /** Remaining segments, e.g. `default`, `form-label`, `default-underline`. */
+  variant: string;
+  fontFamily: string;
+  fontSize: string;
+  fontWeight: string;
+  lineHeight: string;
+  letterSpacing: string;
+}
+
+/**
+ * Typography tokens are emitted as `.ui-typography-*` utility classes (in the
+ * semantic CSS, already applied by ui-react/styles), not custom properties.
+ * Parse the class rules so the demo can show each style + its metrics.
+ */
+export const typographyStyles: TypographyStyle[] = (() => {
+  const out: TypographyStyle[] = [];
+  const blockRe = /\.(ui-typography-[a-z0-9-]+)\s*\{([^}]*)\}/g;
+  for (const m of semanticAcronis.matchAll(blockRe)) {
+    const className = m[1];
+    const decls: Record<string, string> = {};
+    for (const d of m[2].split(';')) {
+      const i = d.indexOf(':');
+      if (i === -1) continue;
+      decls[d.slice(0, i).trim()] = d.slice(i + 1).trim();
+    }
+    const parts = className.slice('ui-typography-'.length).split('-');
+    out.push({
+      className,
+      group: parts[0],
+      variant: parts.slice(1).join('-'),
+      fontFamily: decls['font-family'] ?? '',
+      fontSize: decls['font-size'] ?? '',
+      fontWeight: decls['font-weight'] ?? '',
+      lineHeight: decls['line-height'] ?? '',
+      letterSpacing: decls['letter-spacing'] ?? '',
+    });
+  }
+  return out;
+})();
+
 /** How many tokens a non-default brand overrides. */
 export function brandOverrideCount(brand: Brand): number {
   return brand === DEFAULT_BRAND ? 0 : tokenNames(BRAND_B_CSS).length;

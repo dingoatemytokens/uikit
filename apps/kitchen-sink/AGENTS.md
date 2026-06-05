@@ -51,6 +51,8 @@ delivery model differs from the retired `design-theme`:
 - `colors.tsx` — enumerates `--ui-*` custom properties (semantic + per-component,
   e.g. `--ui-button-*`) parsed from the tokens-pd CSS in `src/lib/tokens.ts`;
   values resolve live per brand/scheme.
+- `typography.tsx` — the `.ui-typography-*` utility classes (headings/body/link/
+  caption/note/fineprint), each shown as live sample text + its name and metrics.
 - `elements.tsx` — raw HTML elements (headings, lists, table, native form
   controls) as the reset renders them.
 - `components.tsx` — `ui-react` `Button` (variants/sizes/states/with-icons) and
