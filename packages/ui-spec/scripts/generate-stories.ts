@@ -1,0 +1,231 @@
+/**
+ * Generate Storybook stories from component specs.
+ *
+ * Drives output from each state's `kind` (see anatomy.yaml):
+ *   - kind=prop     → static matrix / variations (snapshot by passing props)
+ *   - kind=pseudo   → a story per CSS pseudo-state. `:hover`/`:active` emit
+ *                     addon-ready `parameters.pseudo` (needs a pseudo-states
+ *                     addon to paint); `:focus-visible` is driven by a real
+ *                     `play` tab() so it works without one.
+ *   - kind=internal → an Interaction `play` story that performs the real
+ *                     interaction so the component lands in the after-interaction
+ *                     state (e.g. Switch click → checked).
+ *
+ * Output: packages/ui-react/src/components/ui/<name>/__stories__/<name>.generated.stories.tsx
+ * Run:    pnpm --filter @acronis-platform/ui-spec generate:stories
+ *
+ * NOTE (spike limitation): the state *axes* are spec-derived; the small
+ * per-component "how to instantiate" hint below (sample content, aria-label) is
+ * not yet in the spec — a future `story` hint in api.yaml would remove it.
+ */
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { listComponentNames, loadSpec } from '../lib/load';
+import type { AnatomySpec, ApiSpec } from '../types';
+
+const PKG_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const UI_REACT_UI = resolve(PKG_ROOT, '../ui-react/src/components/ui');
+
+interface RenderHint {
+  sample?: string;
+  extraImports?: string[];
+  ariaLabel?: string;
+}
+
+const RENDER: Record<string, RenderHint> = {
+  button: { sample: 'Label' },
+  'button-icon': {
+    sample: '<PlusIcon />',
+    extraImports: [
+      "import { PlusIcon } from '@acronis-platform/icons-react/stroke-mono';",
+    ],
+    ariaLabel: 'Action',
+  },
+  switch: { ariaLabel: 'Toggle' },
+};
+
+const HEADER =
+  '// AUTO-GENERATED from @acronis-platform/ui-spec — DO NOT EDIT.\n' +
+  '// Regenerate: pnpm --filter @acronis-platform/ui-spec generate:stories\n' +
+  '// `:hover` / `:active` stories require a Storybook pseudo-states addon to paint.\n';
+
+const PSEUDO_KEY: Record<string, string> = {
+  ':hover': 'hover',
+  ':active': 'active',
+  ':focus': 'focus',
+};
+
+function enumMembers(api: ApiSpec, prop: string): string[] {
+  const p = api.contract.properties.find((x) => x.name === prop);
+  if (!p) return [];
+  return [...p.type.matchAll(/'([^']+)'/g)].map((m) => m[1]);
+}
+
+const hasProp = (api: ApiSpec, name: string): boolean =>
+  api.contract.properties.some((p) => p.name === name);
+
+const arr = (values: string[]): string =>
+  `[${values.map((v) => `'${v}'`).join(', ')}] as const`;
+
+const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+
+function buildStories(
+  comp: string,
+  api: ApiSpec,
+  anatomy: AnatomySpec,
+  hint: RenderHint
+): { body: string; needsPlay: boolean } {
+  const variants = enumMembers(api, 'variant');
+  const sizes = enumMembers(api, 'size');
+  const label = hint.ariaLabel ? ` aria-label="${hint.ariaLabel}"` : '';
+  const children = hint.sample ?? '';
+  const inst = (props: string) =>
+    children ? `<${comp}${props}>${children}</${comp}>` : `<${comp}${props} />`;
+  const base = inst(label);
+
+  const parts: string[] = [];
+
+  // ── kind=prop: static matrix / variations ──
+  if (variants.length && sizes.length) {
+    parts.push(`const VARIANTS = ${arr(variants)};
+const SIZES = ${arr(sizes)};
+
+export const Matrix: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: \`repeat(\${SIZES.length + 1}, max-content)\`,
+        gap: 12,
+        alignItems: 'center',
+      }}
+    >
+      <span />
+      {SIZES.map((s) => (
+        <span key={s} style={{ fontSize: 12, opacity: 0.6 }}>
+          {s}
+        </span>
+      ))}
+      {VARIANTS.flatMap((v) => [
+        <span key={\`\${v}-label\`} style={{ fontSize: 12, opacity: 0.6 }}>
+          {v}
+        </span>,
+        ...SIZES.map((s) => ${inst(' key={`${v}-${s}`} variant={v} size={s}')}),
+      ])}
+    </div>
+  ),
+};
+
+export const Disabled: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+      {VARIANTS.map((v) => ${inst(' key={v} variant={v} disabled')})}
+    </div>
+  ),
+};`);
+  } else if (hasProp(api, 'checked')) {
+    parts.push(`export const States: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'center' }}>
+      <${comp} aria-label="Off" />
+      <${comp} aria-label="On" defaultChecked />
+      <${comp} aria-label="Disabled off" disabled />
+      <${comp} aria-label="Disabled on" disabled defaultChecked />
+    </div>
+  ),
+};`);
+  } else {
+    parts.push(`export const States: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+      ${inst(label)}
+      ${inst(`${label} disabled`)}
+    </div>
+  ),
+};`);
+  }
+
+  // ── kind=pseudo: one story per pseudo-state ──
+  let needsPlay = false;
+  for (const state of anatomy.states ?? []) {
+    if (state.kind !== 'pseudo' || !state.pseudo) continue;
+    if (state.pseudo === ':focus-visible') {
+      needsPlay = true;
+      parts.push(`export const FocusVisible: Story = {
+  render: () => ${base},
+  // Real keyboard focus — paints :focus-visible without a pseudo-states addon.
+  play: async () => {
+    await userEvent.tab();
+  },
+};`);
+    } else if (PSEUDO_KEY[state.pseudo]) {
+      const key = PSEUDO_KEY[state.pseudo];
+      parts.push(`export const ${cap(key)}: Story = {
+  parameters: { pseudo: { ${key}: true } },
+  render: () => ${base},
+};`);
+    }
+  }
+
+  // ── transitions: drive each interactive transition, land in the new state ──
+  const role = anatomy.root.role ?? 'button';
+  const rootSelector = `[role="${role}"], ${anatomy.root.element}`;
+  for (const t of (anatomy.transitions ?? []).filter((x) => x.interactive)) {
+    needsPlay = true;
+    const guard = t.guard ? ` [guard: ${t.guard}]` : '';
+    parts.push(`// transition "${t.id}": ${t.on} -> ${String(t.to)}${guard}
+export const ${cap(t.id)}: Story = {
+  render: () => ${base},
+  play: async ({ canvasElement }) => {
+    const el = canvasElement.querySelector('${rootSelector}');
+    if (el) await userEvent.click(el as HTMLElement);
+  },
+};`);
+  }
+
+  return { body: parts.join('\n\n'), needsPlay };
+}
+
+function generate(name: string): boolean {
+  if (!existsSync(join(UI_REACT_UI, name))) {
+    console.warn(`skip ${name}: no @acronis-platform/ui-react component`);
+    return false;
+  }
+  const { index, api, anatomy } = loadSpec(name);
+  const comp = index.component;
+  const hint = RENDER[name] ?? {};
+  const { body, needsPlay } = buildStories(comp, api, anatomy, hint);
+
+  const imports = [
+    "import type { Meta, StoryObj } from '@storybook/react-vite';",
+    ...(needsPlay ? ["import { userEvent } from 'storybook/test';"] : []),
+    ...(hint.extraImports ?? []),
+    `import { ${comp} } from '../${name}';`,
+  ].join('\n');
+
+  const file = `${HEADER}
+${imports}
+
+const meta = {
+  title: 'UI/${comp}/All States (generated)',
+  component: ${comp},
+} satisfies Meta<typeof ${comp}>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+${body}
+`;
+
+  const dir = join(UI_REACT_UI, name, '__stories__');
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, `${name}.generated.stories.tsx`), file);
+  console.log(`generated ${name}.generated.stories.tsx`);
+  return true;
+}
+
+let count = 0;
+for (const name of listComponentNames()) if (generate(name)) count += 1;
+console.log(`\n${count} story file(s) generated.`);
