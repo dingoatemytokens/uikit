@@ -40,7 +40,7 @@
     "@acronis-platform/icons-svg": "workspace:*",
     "@types/node": "catalog:",
     "cheerio": "^1.0.0",
-    "svgo": "^4.0.1",
+    "svgo": "catalog:",
     "tsx": "^4.20.0",
     "typescript": "catalog:"
   }
