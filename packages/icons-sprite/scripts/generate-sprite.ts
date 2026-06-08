@@ -134,7 +134,9 @@ function processSvg(filePath: string, type: IconType): string {
       }
     });
     $('[style]').removeAttr('style');
-    $('rect').remove();
+    // NOTE: keep <rect> elements — many icons use them as actual geometry.
+    // If we ever need to drop background rects, do it with a very specific selector.
+    // $('rect[fill="none"], rect[fill="transparent"]').remove();
   }
 
   const $svg = $('svg');
