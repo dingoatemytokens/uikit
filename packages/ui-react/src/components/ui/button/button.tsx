@@ -5,8 +5,8 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-// Variants mirror the Figma "Button" component's `Style` property (Primary,
-// Secondary, Ghost, Destructive, Ai, Inverted). Each interaction state
+// Variants mirror the Figma "Button" component's `Variant` property (Primary,
+// Secondary, Link→ghost, Destructive, Ai, Inverted). Each interaction state
 // (idle / hover / active / disabled) wires background, label, and border to its
 // own dedicated `--ui-button-*` token from @acronis-platform/tokens-pd. Every
 // state is wired explicitly — even where acronis's value is unchanged — because
