@@ -20,21 +20,56 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      # Snapshots only need refreshing when a library's own components / styles /
+      # Storybook config change, or when the shared design tokens (which can alter
+      # any rendered color) change. The job always runs and reports a status; the
+      # build + Docker steps below are skipped when nothing relevant changed, so
+      # docs-only / tooling-only PRs don't pay for a full Storybook + Playwright run.
+      - name: Detect relevant changes
+        uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            ui-legacy:
+              - 'packages/ui-legacy/src/**'
+              - 'packages/ui-legacy/.storybook/**'
+              - 'packages/ui-legacy/package.json'
+              - 'packages/ui-legacy/Dockerfile.storybook'
+              - 'packages/ui-legacy/docker-compose.storybook*.yml'
+              - 'packages/tokens-pd/**'
+              - 'packages/design-tokens/**'
+              - '.github/workflows/visual-regression.yml'
+            ui-react:
+              - 'packages/ui-react/src/**'
+              - 'packages/ui-react/.storybook/**'
+              - 'packages/ui-react/package.json'
+              - 'packages/ui-react/Dockerfile.storybook'
+              - 'packages/ui-react/docker-compose.storybook*.yml'
+              - 'packages/tokens-pd/**'
+              - 'packages/design-tokens/**'
+              - 'packages/icons-react/**'
+              - 'packages/design-assets/**'
+              - '.github/workflows/visual-regression.yml'
+
       - name: Setup PNPM
+        if: steps.changes.outputs[matrix.name] == 'true'
         uses: pnpm/action-setup@v6
 
       - name: Setup Node.js
+        if: steps.changes.outputs[matrix.name] == 'true'
         uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: 'pnpm'
 
       - name: Get pnpm store directory
+        if: steps.changes.outputs[matrix.name] == 'true'
         id: pnpm-cache
         shell: bash
         run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
 
       - name: Cache pnpm store
+        if: steps.changes.outputs[matrix.name] == 'true'
         uses: actions/cache@v4
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -42,11 +77,13 @@ jobs:
           restore-keys: ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
+        if: steps.changes.outputs[matrix.name] == 'true'
         run: pnpm install --frozen-lockfile
 
       # Vite module cache + Storybook builder cache — key on source so only
       # changed files are recompiled when the cache is restored.
       - name: Cache Storybook build
+        if: steps.changes.outputs[matrix.name] == 'true'
         uses: actions/cache@v4
         with:
           path: |
@@ -61,19 +98,21 @@ jobs:
       # Storybook can resolve those imports. ui-legacy is a leaf and needs no
       # pre-build. Mirrors ci.yml's `pnpm --filter "@acronis-platform/ui-react..."`.
       - name: Build workspace dependencies
-        if: matrix.name == 'ui-react'
+        if: matrix.name == 'ui-react' && steps.changes.outputs[matrix.name] == 'true'
         run: pnpm --filter "${{ matrix.filter }}..." run build
 
       - name: Build Storybook
+        if: steps.changes.outputs[matrix.name] == 'true'
         run: pnpm --filter ${{ matrix.filter }} storybook:build
 
       # Docker only serves the pre-built static output and runs Playwright.
       # --build rebuilds the image when Dockerfile or .storybook config changes.
       - name: Run visual regression tests
+        if: steps.changes.outputs[matrix.name] == 'true'
         run: docker compose -f ${{ matrix.dir }}/docker-compose.storybook.yml up --build --abort-on-container-exit --exit-code-from test-runner
 
       - name: Upload diff artifacts on failure
-        if: failure()
+        if: failure() && steps.changes.outputs[matrix.name] == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: visual-regression-diffs-${{ matrix.name }}
