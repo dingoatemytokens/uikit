@@ -1,5 +1,24 @@
 # @acronis-platform/ui-react
 
+## 0.10.0
+
+### Minor Changes
+
+- [#242](https://github.com/acronis/uikit/pull/242) [`fa22177`](https://github.com/acronis/uikit/commit/fa2217700b5dae6105c9c63c7d2e973d752d09a9) Thanks [@leonid](https://github.com/leonid)! - Add `Search`: a search field — a leading magnifier (`SearchIcon`), a borderless
+  text input, and a clear (×) button that appears once there's a value. Themed by
+  the shared `--ui-form-*` token tier; the box owns the visual state via
+  `focus-within` (active border + 3px `--ui-focus-primary` ring), with hover and
+  disabled wired to their own tokens. The clear button empties the field (firing
+  `onChange` with an empty value plus `onClear`) and refocuses the input. Includes
+  tests, Storybook stories, visual-regression baselines, and a Figma Code Connect
+  mapping.
+
+### Patch Changes
+
+- Updated dependencies [[`a85d629`](https://github.com/acronis/uikit/commit/a85d6291933854a99af8825b985c325bfb80725c)]:
+  - @acronis-platform/design-assets@0.4.0
+  - @acronis-platform/icons-react@0.3.0
+
 ## 0.9.0
 
 ### Minor Changes
