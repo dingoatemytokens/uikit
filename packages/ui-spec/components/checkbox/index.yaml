@@ -2,7 +2,7 @@ spec_version: '1.0'
 component: Checkbox
 name: checkbox
 status: ready
-category: form
+category: forms
 description: >-
   A control that lets users select or deselect an option. Supports checked,
   unchecked, and indeterminate states; used individually for a binary choice or
