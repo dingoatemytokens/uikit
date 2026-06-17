@@ -5,21 +5,19 @@
 export default {
   theme: {
     extend: {
-      "textColor": {
-        "radio-global-description": "light-dark(rgb(109 114 120), rgb(109 114 120))",
-        "radio-global-label": "light-dark(rgb(24 25 27), rgb(244 245 245))",
+      "backgroundColor": {
         "radio-checked-box-active": "light-dark(rgb(13 77 165), rgb(117 174 240))",
         "radio-checked-box-disabled": "light-dark(rgb(248 250 252), rgb(0 21 51))",
         "radio-checked-box-hover": "light-dark(rgb(19 84 174), rgb(48 125 232))",
         "radio-checked-box-idle": "light-dark(rgb(23 99 207), rgb(48 125 232))",
-        "radio-checked-icon-active": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "radio-checked-icon-disabled": "light-dark(rgb(214 228 245), rgb(6 54 121))",
-        "radio-checked-icon-hover": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "radio-checked-icon-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))",
         "radio-unchecked-box-active": "light-dark(rgb(214 228 245), rgb(6 54 121))",
         "radio-unchecked-box-disabled": "light-dark(rgb(248 250 252), rgb(0 21 51))",
         "radio-unchecked-box-hover": "light-dark(rgb(238 242 247), rgb(0 32 77))",
         "radio-unchecked-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))"
+      },
+      "textColor": {
+        "radio-global-description": "light-dark(rgb(109 114 120), rgb(109 114 120))",
+        "radio-global-label": "light-dark(rgb(24 25 27), rgb(244 245 245))"
       },
       "borderColor": {
         "radio-checked-box-border-color-active": "light-dark(rgb(23 99 207), rgb(48 125 232))",
@@ -30,6 +28,12 @@ export default {
         "radio-unchecked-box-border-color-disabled": "light-dark(rgb(214 228 245), rgb(6 54 121))",
         "radio-unchecked-box-border-color-hover": "light-dark(rgb(23 99 207), rgb(48 125 232))",
         "radio-unchecked-box-border-color-idle": "light-dark(rgb(214 228 245), rgb(6 54 121))"
+      },
+      "fill": {
+        "radio-checked-icon-active": "light-dark(rgb(255 255 255), rgb(0 0 0))",
+        "radio-checked-icon-disabled": "light-dark(rgb(214 228 245), rgb(6 54 121))",
+        "radio-checked-icon-hover": "light-dark(rgb(255 255 255), rgb(0 0 0))",
+        "radio-checked-icon-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))"
       },
       "fontFamily": {
         "radio-global-description-text-style": "Inter, system-ui, sans-serif",

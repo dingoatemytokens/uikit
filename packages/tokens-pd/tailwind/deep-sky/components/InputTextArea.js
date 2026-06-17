@@ -5,10 +5,12 @@
 export default {
   theme: {
     extend: {
-      "textColor": {
+      "backgroundColor": {
         "input-text-area-box-disabled": "light-dark(rgb(246 246 247), rgb(246 246 247))",
         "input-text-area-box-hover": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "input-text-area-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))",
+        "input-text-area-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))"
+      },
+      "textColor": {
         "input-text-area-description-disabled": "light-dark(rgb(41 49 55), rgb(41 49 55))",
         "input-text-area-description-hover": "light-dark(rgb(54 65 74), rgb(54 65 74))",
         "input-text-area-description-idle": "light-dark(rgb(54 65 74), rgb(54 65 74))",

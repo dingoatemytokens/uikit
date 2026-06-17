@@ -5,17 +5,12 @@
 export default {
   theme: {
     extend: {
-      "textColor": {
+      "backgroundColor": {
         "input-search-box-disabled": "light-dark(rgb(246 246 247), rgb(246 246 247))",
         "input-search-box-hover": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "input-search-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "input-search-clear-icon": "light-dark(rgb(68 81 93), rgb(68 81 93))",
-        "input-search-disabled": "light-dark(rgb(41 49 55), rgb(41 49 55))",
-        "input-search-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
-        "input-search-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))",
-        "input-search-icon-search-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
-        "input-search-icon-search-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
-        "input-search-icon-search-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "input-search-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))"
+      },
+      "textColor": {
         "input-search-placeholder-disabled": "light-dark(rgb(41 49 55), rgb(41 49 55))",
         "input-search-placeholder-hover": "light-dark(rgb(54 65 74), rgb(54 65 74))",
         "input-search-placeholder-idle": "light-dark(rgb(54 65 74), rgb(54 65 74))",
@@ -28,6 +23,12 @@ export default {
         "input-search-border-color-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
         "input-search-border-color-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "input-search-border-color-idle": "light-dark(rgb(199 203 207), rgb(199 203 207))"
+      },
+      "fill": {
+        "input-search-clear-icon": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "input-search-icon-search-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
+        "input-search-icon-search-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "input-search-icon-search-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))"
       },
       "fontFamily": {
         "input-search-label-text-style": "Inter, system-ui, sans-serif",

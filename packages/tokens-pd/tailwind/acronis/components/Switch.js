@@ -5,8 +5,7 @@
 export default {
   theme: {
     extend: {
-      "textColor": {
-        "switch-global-label": "light-dark(rgb(24 25 27), rgb(244 245 245))",
+      "backgroundColor": {
         "switch-global-tick-active": "light-dark(rgb(255 255 255), rgb(0 0 0))",
         "switch-global-tick-disabled": "light-dark(rgb(214 228 245), rgb(6 54 121))",
         "switch-global-tick-hover": "light-dark(rgb(255 255 255), rgb(0 0 0))",
@@ -19,6 +18,9 @@ export default {
         "switch-on-box-disabled": "light-dark(rgb(248 250 252), rgb(0 21 51))",
         "switch-on-box-hover": "light-dark(rgb(70 185 89), rgb(36 143 54))",
         "switch-on-box-idle": "light-dark(rgb(70 185 89), rgb(36 143 54))"
+      },
+      "textColor": {
+        "switch-global-label": "light-dark(rgb(24 25 27), rgb(244 245 245))"
       },
       "borderColor": {
         "switch-global-box-border-color-active": "light-dark(transparent, transparent)",

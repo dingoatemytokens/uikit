@@ -5,11 +5,12 @@
 export default {
   theme: {
     extend: {
-      "textColor": {
+      "backgroundColor": {
         "input-text-global-box-disabled": "light-dark(rgb(246 246 247), rgb(246 246 247))",
         "input-text-global-box-hover": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "input-text-global-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "input-text-global-clear-icon": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "input-text-global-box-idle": "light-dark(rgb(255 255 255), rgb(0 0 0))"
+      },
+      "textColor": {
         "input-text-global-label-disabled": "light-dark(rgb(41 49 55), rgb(41 49 55))",
         "input-text-global-label-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "input-text-global-label-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))",
@@ -31,6 +32,9 @@ export default {
         "input-text-normal-box-border-color-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
         "input-text-normal-box-border-color-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "input-text-normal-box-border-color-idle": "light-dark(rgb(199 203 207), rgb(199 203 207))"
+      },
+      "fill": {
+        "input-text-global-clear-icon": "light-dark(rgb(68 81 93), rgb(68 81 93))"
       },
       "fontFamily": {
         "input-text-global-label-text-style": "Inter, system-ui, sans-serif",
