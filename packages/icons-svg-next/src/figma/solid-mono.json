@@ -29,9 +29,7 @@
   "brand-meta-whatsapp",
   "brand-microsoft-azure",
   "brand-microsoft-defender",
-  "brand-microsoft-dynamics",
   "brand-microsoft-entra-id",
-  "brand-microsoft-exchange",
   "brand-microsoft-one-drive",
   "brand-microsoft-onenote",
   "brand-microsoft-outlook",
@@ -67,5 +65,5 @@
   "compliance-gdpr",
   "compliance-hipaa",
   "compliance-pci",
-  "sparkles-solid"
+  "sparkles-solid-mono"
 ]

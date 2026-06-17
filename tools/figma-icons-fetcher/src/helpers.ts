@@ -85,16 +85,32 @@ export function formatName(name: string): string {
     .replaceAll(/\s+/g, '-');
 }
 
-export function findDuplicates<T extends object>(propertyName: string, arr: T[]): T[] {
+export function findDuplicates<T extends object>(propertyName: string, arr: T[], groupProperty?: string): T[] {
   const seen = new Set<unknown>();
 
   return arr.map((current) => {
     const record = current as Record<string, unknown>;
-    if (seen.has(record[propertyName])) {
-      console.log(chalk.bgRed.bold(`Duplicate icon name: ${String(record[propertyName])}. Please fix Figma file`));
-      record[propertyName] = `${String(record[propertyName])}-duplicate`;
+    let value = String(record[propertyName]);
+
+    if (seen.has(value)) {
+      const group = groupProperty ? record[groupProperty] : undefined;
+      const groupName = group ? formatName(String(group)) : undefined;
+      let renamed = groupName ? `${value}-${groupName}` : `${value}-duplicate`;
+
+      // The group-suffixed name can still collide (same name twice in one group),
+      // so fall back to the generic suffix to keep names unique.
+      while (seen.has(renamed)) {
+        renamed = `${renamed}-duplicate`;
+      }
+
+      console.log(
+        chalk.bgRed.bold(`Duplicate icon name: ${value} -> ${renamed}. Please fix Figma file`),
+      );
+      value = renamed;
+      record[propertyName] = value;
     }
-    seen.add(record[propertyName]);
+
+    seen.add(value);
     return current;
   });
 }

@@ -61,14 +61,40 @@ describe('findDuplicates', () => {
     expect(result[2].name).toBe('icon1-duplicate');
   });
 
-  it('should handle multiple duplicates', () => {
+  it('should handle multiple duplicates with unique names', () => {
     const items = [{ name: 'icon1' }, { name: 'icon1' }, { name: 'icon1' }];
 
     const result = findDuplicates('name', items);
 
     expect(result[0].name).toBe('icon1');
     expect(result[1].name).toBe('icon1-duplicate');
-    expect(result[2].name).toBe('icon1-duplicate');
+    expect(result[2].name).toBe('icon1-duplicate-duplicate');
+  });
+
+  it('should rename duplicates using the group name when provided', () => {
+    const items = [
+      { name: 'icon1', pageName: 'Page A' },
+      { name: 'icon1', pageName: 'Page B' },
+    ];
+
+    const result = findDuplicates('name', items, 'pageName');
+
+    expect(result[0].name).toBe('icon1');
+    expect(result[1].name).toBe('icon1-page-b');
+  });
+
+  it('should fall back to the duplicate suffix when the group-suffixed name still collides', () => {
+    const items = [
+      { name: 'icon1', pageName: 'Page A' },
+      { name: 'icon1', pageName: 'Page B' },
+      { name: 'icon1', pageName: 'Page B' },
+    ];
+
+    const result = findDuplicates('name', items, 'pageName');
+
+    expect(result[0].name).toBe('icon1');
+    expect(result[1].name).toBe('icon1-page-b');
+    expect(result[2].name).toBe('icon1-page-b-duplicate');
   });
 });
 

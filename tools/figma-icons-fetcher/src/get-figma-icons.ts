@@ -125,5 +125,5 @@ export async function getFigmaIcons(config: FetcherConfig): Promise<FigmaIcon[]>
     throw new Error(`No icons found using the "${config.selectionStrategy}" strategy in ${source}`);
   }
 
-  return findDuplicates<FigmaIcon>('name', icons);
+  return findDuplicates<FigmaIcon>('name', icons, 'pageName');
 }
