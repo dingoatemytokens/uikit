@@ -65,12 +65,17 @@ export async function downloadImage(config: FetcherConfig, icon: IconWithUrl): P
     // Optimize SVG
     const optimizedSvg = optimize(svgText, { plugins });
 
-    // Replace system color with currentColor for theming
-    const systemColorRegex = new RegExp(escapeRegExp(config.systemColor), 'gi');
-    const content = optimizedSvg.data.replace(systemColorRegex, 'currentColor');
+    // Detect multicolor before any color substitution so the system color is
+    // counted as a real color (it contributes to the palette in multicolor icons).
+    const iconIsMulticolor = isMulticolor(optimizedSvg.data);
 
-    // Detect if icon is multicolor
-    const iconIsMulticolor = isMulticolor(content);
+    // Replace system color with currentColor for theming — monocolor icons only.
+    // Multicolor icons intentionally use the system color as a fill/accent, so
+    // replacing it would break their appearance (e.g. a blue circle becoming black).
+    const systemColorRegex = new RegExp(escapeRegExp(config.systemColor), 'gi');
+    const content = iconIsMulticolor
+      ? optimizedSvg.data
+      : optimizedSvg.data.replace(systemColorRegex, 'currentColor');
 
     // Determine output directories (excluding mono/multi - those are handled separately)
     const outputDirs = [config.outputDir, ...config.outputDirs];
