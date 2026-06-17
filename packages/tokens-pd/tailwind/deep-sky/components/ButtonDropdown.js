@@ -5,18 +5,21 @@
 export default {
   theme: {
     extend: {
-      "backgroundColor": {
+      "textColor": {
         "button-dropdown-primary-container-active": "light-dark(rgb(41 49 55), rgb(41 49 55))",
         "button-dropdown-primary-container-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
         "button-dropdown-primary-container-hover": "light-dark(rgb(54 65 74), rgb(54 65 74))",
         "button-dropdown-primary-container-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "button-dropdown-primary-icon": "light-dark(rgb(255 255 255), rgb(0 0 0))",
+        "button-dropdown-primary-label": "light-dark(rgb(255 255 255), rgb(0 0 0))",
         "button-dropdown-secondary-container-active": "light-dark(rgb(216 222 228), rgb(216 222 228))",
         "button-dropdown-secondary-container-disabled": "light-dark(transparent, transparent)",
         "button-dropdown-secondary-container-hover": "light-dark(rgb(236 238 239), rgb(236 238 239))",
-        "button-dropdown-secondary-container-idle": "light-dark(transparent, transparent)"
-      },
-      "textColor": {
-        "button-dropdown-primary-label": "light-dark(rgb(255 255 255), rgb(0 0 0))",
+        "button-dropdown-secondary-container-idle": "light-dark(transparent, transparent)",
+        "button-dropdown-secondary-icon-active": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "button-dropdown-secondary-icon-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
+        "button-dropdown-secondary-icon-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
+        "button-dropdown-secondary-icon-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "button-dropdown-secondary-label-active": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "button-dropdown-secondary-label-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
         "button-dropdown-secondary-label-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
@@ -27,13 +30,6 @@ export default {
         "button-dropdown-secondary-container-border-color-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
         "button-dropdown-secondary-container-border-color-hover": "light-dark(transparent, transparent)",
         "button-dropdown-secondary-container-border-color-idle": "light-dark(rgb(199 203 207), rgb(199 203 207))"
-      },
-      "fill": {
-        "button-dropdown-primary-icon": "light-dark(rgb(255 255 255), rgb(0 0 0))",
-        "button-dropdown-secondary-icon-active": "light-dark(rgb(68 81 93), rgb(68 81 93))",
-        "button-dropdown-secondary-icon-disabled": "light-dark(rgb(199 203 207), rgb(199 203 207))",
-        "button-dropdown-secondary-icon-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",
-        "button-dropdown-secondary-icon-idle": "light-dark(rgb(68 81 93), rgb(68 81 93))"
       },
       "fontFamily": {
         "button-dropdown-global-label-text-style": "Inter, system-ui, sans-serif"
