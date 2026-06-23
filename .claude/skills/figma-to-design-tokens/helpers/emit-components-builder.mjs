@@ -16,11 +16,14 @@ const OUT_PATH        = fileURLToPath(new URL('../../../../packages/design-token
 const PRIMITIVES_PATH = fileURLToPath(new URL('../../../../packages/design-tokens/tiers/primitives.json', import.meta.url));
 const SEMANTICS_PATH  = fileURLToPath(new URL('../../../../packages/design-tokens/tiers/semantics.json', import.meta.url));
 
-// Components to emit — PascalCase Figma names. Pass a subset via constructor.
-const DEFAULT_COMPONENTS = [
-  'Breadcrumb', 'Button', 'ButtonIcon', 'ButtonMenu', 'Checkbox',
-  'InputDatePicker', 'InputSearch', 'InputSelect', 'InputText', 'InputTextArea', 'Radio',
-  'SidebarPrimary', 'SidebarSecondary', 'Switch', 'Tag', 'Tooltip',
+// Full component list from the snapshot — kept as a reference for callers
+// that want to pass an explicit subset. The default is null (= emit everything).
+export const DEFAULT_COMPONENTS = [
+  'Avatar', 'Breadcrumb', 'Button', 'ButtonIcon', 'ButtonMenu',
+  'CardFilter', 'Checkbox', 'Icon',
+  'InputDatePicker', 'InputSearch', 'InputSelect', 'InputText', 'InputTextArea',
+  'MenuItem', 'Radio', 'SearchGlobal',
+  'SidebarPrimary', 'SidebarSecondary', 'Switch', 'Table', 'Tag', 'Tooltip',
 ];
 
 
@@ -34,6 +37,8 @@ export class ComponentsEmitter {
   #semantics;
   #allowlist;
   #aliasTranslator;
+  #validTypoRefs;  // Set<string> of known "{typography.G.N}" refs
+  #typoFallback;   // Map<dottedLeaf, canonicalRef> for hyphen-as-dot mismatches
 
   constructor(snapshot, { components = DEFAULT_COMPONENTS } = {}) {
     this.#snapshot = snapshot;
@@ -41,6 +46,7 @@ export class ComponentsEmitter {
     this.#semantics  = JSON.parse(fs.readFileSync(SEMANTICS_PATH, 'utf8'));
     this.#allowlist  = new Set(components);
     this.#aliasTranslator = new AliasTranslator(this.#primitives);
+    this.#buildTypoIndex();
   }
 
   emit() {
@@ -169,9 +175,37 @@ export class ComponentsEmitter {
     if (value.startsWith('{')) return this.#translateAlias(value, variableId);
     // A bare dotted string is a typography reference; a bare word is an enum literal.
     if (value.includes('.')) {
-      return value.startsWith('typography.') ? `{${value}}` : `{typography.${value}}`;
+      if (value.startsWith('typography.')) {
+        const directRef = `{${value}}`;
+        if (this.#validTypoRefs.has(directRef)) return directRef;
+        // Figma variable bindings sometimes store the leaf name with hyphens
+        // replaced by dots and the group prefix dropped (e.g. the style
+        // "headings/title-accent" → "typography.title.accent"). Use the
+        // dotted-leaf index to find the canonical path.
+        const path = value.slice('typography.'.length);
+        return this.#typoFallback.get(path) ?? directRef;
+      }
+      return `{typography.${value}}`;
     }
     return value;
+  }
+
+  #buildTypoIndex() {
+    this.#validTypoRefs = new Set();
+    this.#typoFallback  = new Map();
+    const typo = this.#semantics.typography ?? {};
+    for (const [group, sub] of Object.entries(typo)) {
+      if (group.startsWith('$') || typeof sub !== 'object') continue;
+      for (const [name, leaf] of Object.entries(sub)) {
+        if (name.startsWith('$') || !leaf || typeof leaf !== 'object') continue;
+        const fullRef = `{typography.${group}.${name}}`;
+        this.#validTypoRefs.add(fullRef);
+        // Index names that contain hyphens under their dotted form so that
+        // "typography.title.accent" resolves to "{typography.headings.title-accent}".
+        const dottedLeaf = name.replace(/-/g, '.');
+        if (dottedLeaf !== name) this.#typoFallback.set(dottedLeaf, fullRef);
+      }
+    }
   }
 
   #translateAlias(alias, variableId) {
