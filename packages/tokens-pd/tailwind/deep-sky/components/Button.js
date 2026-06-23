@@ -51,7 +51,7 @@ export default {
       },
       "borderColor": {
         "button-inverted-container-border-color-active": "light-dark(transparent, transparent)",
-        "button-inverted-container-border-color-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898))",
+        "button-inverted-container-border-color-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102))",
         "button-inverted-container-border-color-hover": "light-dark(transparent, transparent)",
         "button-inverted-container-border-color-idle": "light-dark(transparent, transparent)",
         "button-secondary-container-border-color-active": "light-dark(transparent, transparent)",

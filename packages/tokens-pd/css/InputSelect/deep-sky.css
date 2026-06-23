@@ -3,8 +3,8 @@
 
 :root, :host {
   --ui-input-select-dropdown-container-border-color: light-dark(rgb(199 203 207), rgb(199 203 207));
-  --ui-input-select-dropdown-dropdown-search-label-color-placeholder: light-dark(rgb(255 255 255), rgb(255 255 255));
-  --ui-input-select-dropdown-dropdown-search-label-color-value: light-dark(rgb(255 255 255), rgb(255 255 255));
+  --ui-input-select-dropdown-dropdown-search-label-color-placeholder: light-dark(rgb(54 65 74), rgb(54 65 74));
+  --ui-input-select-dropdown-dropdown-search-label-color-value: light-dark(rgb(68 81 93), rgb(68 81 93));
   --ui-input-select-dropdown-item-global-icon-checked: light-dark(rgb(68 81 93), rgb(68 81 93));
   --ui-input-select-dropdown-item-global-icon-collapse: light-dark(rgb(68 81 93), rgb(68 81 93));
   --ui-input-select-dropdown-item-global-icon-tenant: light-dark(rgb(68 81 93), rgb(68 81 93));

@@ -51,7 +51,7 @@ export default {
       },
       "borderColor": {
         "button-inverted-container-border-color-active": "light-dark(transparent, transparent)",
-        "button-inverted-container-border-color-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898))",
+        "button-inverted-container-border-color-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102))",
         "button-inverted-container-border-color-hover": "light-dark(transparent, transparent)",
         "button-inverted-container-border-color-idle": "light-dark(transparent, transparent)",
         "button-secondary-container-border-color-active": "light-dark(transparent, transparent)",
@@ -61,7 +61,7 @@ export default {
       },
       "fill": {
         "button-ai-icon-active": "light-dark(rgb(255 255 255), rgb(255 255 255))",
-        "button-ai-icon-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898))",
+        "button-ai-icon-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102))",
         "button-ai-icon-hover": "light-dark(rgb(255 255 255), rgb(255 255 255))",
         "button-ai-icon-idle": "light-dark(rgb(255 255 255), rgb(255 255 255))",
         "button-destructive-icon-active": "light-dark(rgb(255 255 255), rgb(255 255 255))",
@@ -77,7 +77,7 @@ export default {
         "button-inverted-icon-hover": "light-dark(rgb(255 255 255), rgb(255 255 255))",
         "button-inverted-icon-idle": "light-dark(rgb(255 255 255), rgb(255 255 255))",
         "button-primary-icon-active": "light-dark(rgb(255 255 255), rgb(255 255 255))",
-        "button-primary-icon-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898))",
+        "button-primary-icon-disabled": "light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102))",
         "button-primary-icon-hover": "light-dark(rgb(255 255 255), rgb(255 255 255))",
         "button-primary-icon-idle": "light-dark(rgb(255 255 255), rgb(255 255 255))",
         "button-secondary-icon-active": "light-dark(rgb(23 99 207), rgb(117 174 240))",

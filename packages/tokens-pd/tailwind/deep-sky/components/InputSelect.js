@@ -18,8 +18,8 @@ export default {
         "input-select-global-box-idle": "light-dark(rgb(255 255 255), rgb(31 32 34))"
       },
       "textColor": {
-        "input-select-dropdown-dropdown-search-label-placeholder": "light-dark(rgb(255 255 255), rgb(255 255 255))",
-        "input-select-dropdown-dropdown-search-label-value": "light-dark(rgb(255 255 255), rgb(255 255 255))",
+        "input-select-dropdown-dropdown-search-label-placeholder": "light-dark(rgb(54 65 74), rgb(54 65 74))",
+        "input-select-dropdown-dropdown-search-label-value": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "input-select-dropdown-item-global-label": "light-dark(rgb(68 81 93), rgb(68 81 93))",
         "input-select-global-label-disabled": "light-dark(rgb(41 49 55), rgb(41 49 55))",
         "input-select-global-label-hover": "light-dark(rgb(68 81 93), rgb(68 81 93))",

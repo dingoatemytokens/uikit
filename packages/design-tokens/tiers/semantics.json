@@ -22,6 +22,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.13}",
+            "acronis-dark-mode": "{palette.blue.13}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [196.32, 81.7, 30]
@@ -36,6 +37,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [199.81, 89.08, 53.33]
@@ -50,6 +52,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.5}",
+            "acronis-dark-mode": "{palette.blue.5}",
             "deep-sky": { "colorSpace": "hsl", "components": [200, 100, 81.76] }
           }
         },
@@ -61,6 +64,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.10}",
+            "acronis-dark-mode": "{palette.blue.10}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [199.81, 89.08, 53.33]
@@ -75,6 +79,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.12}",
+            "acronis-dark-mode": "{palette.blue.12}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [195.93, 84.96, 26.08]
@@ -89,6 +94,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [208.8, 15.53, 31.57]
@@ -103,6 +109,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.9}",
+            "acronis-dark-mode": "{palette.blue.9}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [205.71, 14.58, 18.82]
@@ -117,6 +124,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -131,6 +139,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.8}",
+            "acronis-dark-mode": "{palette.blue.8}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [207, 15.63, 25.1]
@@ -147,6 +156,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.8}",
+            "acronis-dark-mode": "{palette.blue.8}",
             "deep-sky": "{palette.blue.8}"
           }
         },
@@ -158,6 +168,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.11}",
+            "acronis-dark-mode": "{palette.blue.11}",
             "deep-sky": "{palette.blue.11}"
           }
         },
@@ -169,6 +180,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.9}",
+            "acronis-dark-mode": "{palette.blue.9}",
             "deep-sky": "{palette.blue.9}"
           }
         },
@@ -180,6 +192,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.10}",
+            "acronis-dark-mode": "{palette.blue.10}",
             "deep-sky": "{palette.blue.10}"
           }
         }
@@ -193,6 +206,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.1}",
+            "acronis-dark-mode": "{palette.transparent.inverted.1}",
             "deep-sky": "{palette.transparent.inverted.1}"
           }
         },
@@ -204,6 +218,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.dark.11}",
+            "acronis-dark-mode": "{palette.transparent.dark.11}",
             "deep-sky": "{palette.transparent.dark.11}"
           }
         }
@@ -217,6 +232,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.violet.1}",
+            "acronis-dark-mode": "{palette.violet.1}",
             "deep-sky": "{palette.violet.1}"
           }
         },
@@ -228,6 +244,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.violet.2}",
+            "acronis-dark-mode": "{palette.violet.2}",
             "deep-sky": "{palette.violet.2}"
           }
         },
@@ -239,6 +256,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.violet.3}",
+            "acronis-dark-mode": "{palette.violet.3}",
             "deep-sky": "{palette.violet.3}"
           }
         },
@@ -250,6 +268,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.1}",
+            "acronis-dark-mode": "{palette.orange.1}",
             "deep-sky": "{palette.orange.1}"
           }
         },
@@ -261,6 +280,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.2}",
+            "acronis-dark-mode": "{palette.orange.2}",
             "deep-sky": "{palette.orange.2}"
           }
         },
@@ -272,6 +292,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.3}",
+            "acronis-dark-mode": "{palette.orange.3}",
             "deep-sky": "{palette.orange.3}"
           }
         },
@@ -283,6 +304,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.1}",
+            "acronis-dark-mode": "{palette.red.1}",
             "deep-sky": "{palette.red.1}"
           }
         },
@@ -294,6 +316,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.2}",
+            "acronis-dark-mode": "{palette.red.2}",
             "deep-sky": "{palette.red.2}"
           }
         },
@@ -305,6 +328,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.3}",
+            "acronis-dark-mode": "{palette.red.3}",
             "deep-sky": "{palette.red.3}"
           }
         },
@@ -316,6 +340,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.1}",
+            "acronis-dark-mode": "{palette.blue.1}",
             "deep-sky": "{palette.blue.1}"
           }
         },
@@ -327,6 +352,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.2}",
+            "acronis-dark-mode": "{palette.blue.2}",
             "deep-sky": "{palette.blue.2}"
           }
         },
@@ -338,6 +364,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": "{palette.blue.3}"
           }
         },
@@ -349,6 +376,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.base}",
+            "acronis-dark-mode": "{palette.base}",
             "deep-sky": "{palette.base}"
           }
         },
@@ -360,6 +388,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.1}",
+            "acronis-dark-mode": "{palette.grayscale.1}",
             "deep-sky": "{palette.grayscale.1}"
           }
         },
@@ -371,6 +400,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.2}",
+            "acronis-dark-mode": "{palette.grayscale.2}",
             "deep-sky": "{palette.grayscale.2}"
           }
         },
@@ -382,6 +412,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -396,6 +427,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.6}",
+            "acronis-dark-mode": "{palette.green.6}",
             "deep-sky": "{palette.green.6}"
           }
         },
@@ -407,6 +439,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.1}",
+            "acronis-dark-mode": "{palette.green.1}",
             "deep-sky": "{palette.green.1}"
           }
         },
@@ -418,6 +451,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.2}",
+            "acronis-dark-mode": "{palette.green.2}",
             "deep-sky": "{palette.green.2}"
           }
         },
@@ -429,6 +463,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.3}",
+            "acronis-dark-mode": "{palette.green.3}",
             "deep-sky": "{palette.green.3}"
           }
         },
@@ -440,6 +475,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.1}",
+            "acronis-dark-mode": "{palette.yellow.1}",
             "deep-sky": "{palette.yellow.1}"
           }
         },
@@ -451,6 +487,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.2}",
+            "acronis-dark-mode": "{palette.yellow.2}",
             "deep-sky": "{palette.yellow.2}"
           }
         },
@@ -462,6 +499,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.3}",
+            "acronis-dark-mode": "{palette.yellow.3}",
             "deep-sky": "{palette.yellow.3}"
           }
         }
@@ -475,6 +513,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.7}",
+            "acronis-dark-mode": "{palette.orange.7}",
             "deep-sky": "{palette.orange.7}"
           }
         },
@@ -486,6 +525,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.8}",
+            "acronis-dark-mode": "{palette.orange.8}",
             "deep-sky": "{palette.orange.8}"
           }
         },
@@ -497,6 +537,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.9}",
+            "acronis-dark-mode": "{palette.orange.9}",
             "deep-sky": "{palette.orange.9}"
           }
         },
@@ -508,6 +549,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.7}",
+            "acronis-dark-mode": "{palette.red.7}",
             "deep-sky": "{palette.red.7}"
           }
         },
@@ -519,6 +561,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.9}",
+            "acronis-dark-mode": "{palette.red.9}",
             "deep-sky": "{palette.red.9}"
           }
         },
@@ -530,6 +573,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.10}",
+            "acronis-dark-mode": "{palette.red.10}",
             "deep-sky": "{palette.red.10}"
           }
         },
@@ -541,6 +585,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": "{palette.blue.7}"
           }
         },
@@ -552,6 +597,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.8}",
+            "acronis-dark-mode": "{palette.blue.8}",
             "deep-sky": "{palette.blue.8}"
           }
         },
@@ -563,6 +609,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.9}",
+            "acronis-dark-mode": "{palette.blue.9}",
             "deep-sky": "{palette.blue.9}"
           }
         },
@@ -574,6 +621,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.7}",
+            "acronis-dark-mode": "{palette.grayscale.7}",
             "deep-sky": "{palette.grayscale.7}"
           }
         },
@@ -585,6 +633,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.8}",
+            "acronis-dark-mode": "{palette.grayscale.8}",
             "deep-sky": "{palette.grayscale.8}"
           }
         },
@@ -596,6 +645,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.9}",
+            "acronis-dark-mode": "{palette.grayscale.9}",
             "deep-sky": "{palette.grayscale.9}"
           }
         },
@@ -607,6 +657,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.7}",
+            "acronis-dark-mode": "{palette.green.7}",
             "deep-sky": "{palette.green.7}"
           }
         },
@@ -618,6 +669,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.8}",
+            "acronis-dark-mode": "{palette.green.8}",
             "deep-sky": "{palette.green.8}"
           }
         },
@@ -629,6 +681,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.9}",
+            "acronis-dark-mode": "{palette.green.9}",
             "deep-sky": "{palette.green.9}"
           }
         },
@@ -640,6 +693,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.7}",
+            "acronis-dark-mode": "{palette.yellow.7}",
             "deep-sky": "{palette.yellow.7}"
           }
         },
@@ -651,6 +705,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.8}",
+            "acronis-dark-mode": "{palette.yellow.8}",
             "deep-sky": "{palette.yellow.8}"
           }
         },
@@ -662,6 +717,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.9}",
+            "acronis-dark-mode": "{palette.yellow.9}",
             "deep-sky": "{palette.yellow.9}"
           }
         }
@@ -675,6 +731,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 18.18, 87.06]
@@ -689,6 +746,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.1}",
+            "acronis-dark-mode": "{palette.blue.1}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [200, 8.57, 93.14]
@@ -703,6 +761,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.base}",
+            "acronis-dark-mode": "{palette.base}",
             "deep-sky": "{palette.base}"
           }
         },
@@ -714,6 +773,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.0}",
+            "acronis-dark-mode": "{palette.blue.0}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [240, 5.88, 96.67]
@@ -729,6 +789,7 @@
         "platforms": ["PD"],
         "values": {
           "acronis": "{palette.transparent.clear}",
+          "acronis-dark-mode": "{palette.transparent.clear}",
           "deep-sky": "{palette.transparent.clear}"
         }
       }
@@ -743,6 +804,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.9}",
+            "acronis-dark-mode": "{palette.transparent.inverted.9}",
             "deep-sky": "{palette.transparent.inverted.9}"
           }
         },
@@ -754,6 +816,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.0}",
+            "acronis-dark-mode": "{palette.grayscale.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         },
@@ -765,6 +828,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.9}",
+            "acronis-dark-mode": "{palette.transparent.inverted.9}",
             "deep-sky": "{palette.transparent.inverted.9}"
           }
         }
@@ -779,6 +843,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{gradients.ai.idle}",
+            "acronis-dark-mode": "{gradients.ai.idle}",
             "deep-sky": "{gradients.ai.idle}"
           }
         },
@@ -790,6 +855,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.4}",
+            "acronis-dark-mode": "{palette.orange.4}",
             "deep-sky": "{palette.orange.4}"
           }
         },
@@ -801,6 +867,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.8}",
+            "acronis-dark-mode": "{palette.orange.8}",
             "deep-sky": "{palette.orange.8}"
           }
         },
@@ -812,6 +879,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.4}",
+            "acronis-dark-mode": "{palette.red.4}",
             "deep-sky": "{palette.red.4}"
           }
         },
@@ -823,6 +891,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.8}",
+            "acronis-dark-mode": "{palette.red.8}",
             "deep-sky": "{palette.red.8}"
           }
         },
@@ -834,6 +903,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.4}",
+            "acronis-dark-mode": "{palette.blue.4}",
             "deep-sky": "{palette.blue.4}"
           }
         },
@@ -845,6 +915,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.8}",
+            "acronis-dark-mode": "{palette.blue.8}",
             "deep-sky": "{palette.blue.8}"
           }
         },
@@ -856,6 +927,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.4}",
+            "acronis-dark-mode": "{palette.grayscale.4}",
             "deep-sky": "{palette.grayscale.4}"
           }
         },
@@ -867,6 +939,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.8}",
+            "acronis-dark-mode": "{palette.grayscale.8}",
             "deep-sky": "{palette.grayscale.8}"
           }
         },
@@ -878,6 +951,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.4}",
+            "acronis-dark-mode": "{palette.green.4}",
             "deep-sky": "{palette.green.4}"
           }
         },
@@ -889,6 +963,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.8}",
+            "acronis-dark-mode": "{palette.green.8}",
             "deep-sky": "{palette.green.8}"
           }
         },
@@ -900,6 +975,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.4}",
+            "acronis-dark-mode": "{palette.yellow.4}",
             "deep-sky": "{palette.yellow.4}"
           }
         },
@@ -911,6 +987,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.8}",
+            "acronis-dark-mode": "{palette.yellow.8}",
             "deep-sky": "{palette.yellow.8}"
           }
         }
@@ -924,6 +1001,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -938,6 +1016,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [208.8, 15.53, 31.57]
@@ -952,6 +1031,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.7}",
+            "acronis-dark-mode": "{palette.red.7}",
             "deep-sky": "{palette.red.7}"
           }
         },
@@ -963,6 +1043,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -978,6 +1059,7 @@
         "platforms": ["PD"],
         "values": {
           "acronis": "{palette.transparent.clear}",
+          "acronis-dark-mode": "{palette.transparent.clear}",
           "deep-sky": "{palette.transparent.clear}"
         }
       }
@@ -991,6 +1073,7 @@
         "platforms": ["PD"],
         "values": {
           "acronis": "{palette.blue.4}",
+          "acronis-dark-mode": "{palette.blue.4}",
           "deep-sky": "{palette.blue.4}"
         }
       },
@@ -1002,6 +1085,7 @@
         "platforms": ["PD"],
         "values": {
           "acronis": "{palette.red.4}",
+          "acronis-dark-mode": "{palette.red.4}",
           "deep-sky": "{palette.red.4}"
         }
       },
@@ -1013,6 +1097,7 @@
         "platforms": ["PD"],
         "values": {
           "acronis": "{palette.blue.4}",
+          "acronis-dark-mode": "{palette.blue.4}",
           "deep-sky": "{palette.blue.4}"
         }
       },
@@ -1024,6 +1109,7 @@
         "platforms": ["PD"],
         "values": {
           "acronis": "{palette.blue.4}",
+          "acronis-dark-mode": "{palette.blue.4}",
           "deep-sky": "{palette.blue.4}"
         }
       }
@@ -1038,6 +1124,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.9}",
+            "acronis-dark-mode": "{palette.transparent.inverted.9}",
             "deep-sky": "{palette.transparent.inverted.1}"
           }
         },
@@ -1049,6 +1136,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         },
@@ -1060,6 +1148,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.4}",
+            "acronis-dark-mode": "{palette.transparent.inverted.4}",
             "deep-sky": "{palette.transparent.inverted.4}"
           }
         }
@@ -1073,6 +1162,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.7}",
+            "acronis-dark-mode": "{palette.transparent.inverted.7}",
             "deep-sky": "{palette.transparent.inverted.7}"
           }
         },
@@ -1084,6 +1174,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         },
@@ -1095,6 +1186,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.4}",
+            "acronis-dark-mode": "{palette.transparent.inverted.4}",
             "deep-sky": "{palette.transparent.inverted.4}"
           }
         }
@@ -1108,6 +1200,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         }
@@ -1121,6 +1214,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.violet.11}",
+            "acronis-dark-mode": "{palette.violet.11}",
             "deep-sky": "{palette.violet.11}"
           }
         },
@@ -1132,6 +1226,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.11}",
+            "acronis-dark-mode": "{palette.orange.11}",
             "deep-sky": "{palette.orange.11}"
           }
         },
@@ -1143,6 +1238,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.11}",
+            "acronis-dark-mode": "{palette.red.11}",
             "deep-sky": "{palette.red.11}"
           }
         },
@@ -1154,6 +1250,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -1168,6 +1265,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.11}",
+            "acronis-dark-mode": "{palette.blue.11}",
             "deep-sky": "{palette.blue.11}"
           }
         },
@@ -1179,6 +1277,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.11}",
+            "acronis-dark-mode": "{palette.grayscale.0}",
             "deep-sky": "{palette.grayscale.11}"
           }
         },
@@ -1190,6 +1289,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.11}",
+            "acronis-dark-mode": "{palette.blue.11}",
             "deep-sky": "{palette.blue.11}"
           }
         },
@@ -1201,6 +1301,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.11}",
+            "acronis-dark-mode": "{palette.green.11}",
             "deep-sky": "{palette.green.11}"
           }
         },
@@ -1212,6 +1313,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.11}",
+            "acronis-dark-mode": "{palette.yellow.11}",
             "deep-sky": "{palette.yellow.11}"
           }
         }
@@ -1225,6 +1327,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.13}",
+            "acronis-dark-mode": "{palette.blue.13}",
             "deep-sky": "{palette.blue.13}"
           }
         },
@@ -1236,6 +1339,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.7}",
+            "acronis-dark-mode": "{palette.red.7}",
             "deep-sky": "{palette.red.7}"
           }
         },
@@ -1247,6 +1351,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -1261,6 +1366,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.4}",
+            "acronis-dark-mode": "{palette.grayscale.4}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -1275,6 +1381,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [208.8, 15.53, 31.57]
@@ -1293,6 +1400,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         },
@@ -1304,6 +1412,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": "{palette.blue.7}"
           }
         },
@@ -1315,6 +1424,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.1}",
+            "acronis-dark-mode": "{palette.transparent.inverted.1}",
             "deep-sky": "{palette.transparent.inverted.1}"
           }
         },
@@ -1326,6 +1436,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.5}",
+            "acronis-dark-mode": "{palette.blue.5}",
             "deep-sky": "{palette.blue.5}"
           }
         },
@@ -1337,6 +1448,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": "{palette.blue.3}"
           }
         },
@@ -1348,6 +1460,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         },
@@ -1359,6 +1472,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.4}",
+            "acronis-dark-mode": "{palette.transparent.inverted.4}",
             "deep-sky": "{palette.transparent.inverted.4}"
           }
         }
@@ -1372,6 +1486,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.7}",
+            "acronis-dark-mode": "{palette.transparent.inverted.7}",
             "deep-sky": "{palette.transparent.inverted.7}"
           }
         },
@@ -1383,6 +1498,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         }
@@ -1396,6 +1512,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": "{palette.blue.7}"
           }
         },
@@ -1407,6 +1524,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.5}",
+            "acronis-dark-mode": "{palette.blue.5}",
             "deep-sky": "{palette.blue.5}"
           }
         },
@@ -1418,6 +1536,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": "{palette.blue.3}"
           }
         },
@@ -1429,6 +1548,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.0}",
+            "acronis-dark-mode": "{palette.transparent.inverted.0}",
             "deep-sky": "{palette.transparent.inverted.0}"
           }
         },
@@ -1440,6 +1560,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.transparent.inverted.4}",
+            "acronis-dark-mode": "{palette.transparent.inverted.4}",
             "deep-sky": "{palette.transparent.inverted.4}"
           }
         }
@@ -1453,6 +1574,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.violet.11}",
+            "acronis-dark-mode": "{palette.violet.11}",
             "deep-sky": "{palette.violet.11}"
           }
         },
@@ -1464,6 +1586,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.orange.11}",
+            "acronis-dark-mode": "{palette.orange.11}",
             "deep-sky": "{palette.orange.11}"
           }
         },
@@ -1475,6 +1598,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.11}",
+            "acronis-dark-mode": "{palette.red.11}",
             "deep-sky": "{palette.red.11}"
           }
         },
@@ -1486,6 +1610,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.11}",
+            "acronis-dark-mode": "{palette.blue.11}",
             "deep-sky": "{palette.blue.11}"
           }
         },
@@ -1497,6 +1622,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.11}",
+            "acronis-dark-mode": "{palette.blue.11}",
             "deep-sky": "{palette.blue.11}"
           }
         },
@@ -1508,6 +1634,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.5}",
+            "acronis-dark-mode": "{palette.blue.5}",
             "deep-sky": "{palette.blue.5}"
           }
         },
@@ -1519,6 +1646,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.13}",
+            "acronis-dark-mode": "{palette.blue.13}",
             "deep-sky": "{palette.blue.13}"
           }
         },
@@ -1530,6 +1658,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.14}",
+            "acronis-dark-mode": "{palette.blue.14}",
             "deep-sky": "{palette.blue.14}"
           }
         },
@@ -1541,6 +1670,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.11}",
+            "acronis-dark-mode": "{palette.grayscale.11}",
             "deep-sky": "{palette.grayscale.11}"
           }
         },
@@ -1552,6 +1682,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.14}",
+            "acronis-dark-mode": "{palette.grayscale.14}",
             "deep-sky": "{palette.grayscale.14}"
           }
         },
@@ -1563,6 +1694,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.11}",
+            "acronis-dark-mode": "{palette.grayscale.11}",
             "deep-sky": "{palette.grayscale.11}"
           }
         },
@@ -1574,6 +1706,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.green.11}",
+            "acronis-dark-mode": "{palette.green.11}",
             "deep-sky": "{palette.green.11}"
           }
         },
@@ -1585,6 +1718,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.yellow.11}",
+            "acronis-dark-mode": "{palette.yellow.11}",
             "deep-sky": "{palette.yellow.11}"
           }
         }
@@ -1598,6 +1732,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.red.7}",
+            "acronis-dark-mode": "{palette.red.7}",
             "deep-sky": "{palette.red.7}"
           }
         },
@@ -1609,6 +1744,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.5}",
+            "acronis-dark-mode": "{palette.grayscale.5}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [205.71, 14.58, 18.82]
@@ -1623,6 +1759,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.7}",
+            "acronis-dark-mode": "{palette.blue.7}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [208.8, 15.53, 31.57]
@@ -1637,6 +1774,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.3}",
+            "acronis-dark-mode": "{palette.blue.3}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [210, 7.69, 79.61]
@@ -1651,6 +1789,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.8}",
+            "acronis-dark-mode": "{palette.blue.8}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [207, 15.63, 25.1]
@@ -1665,6 +1804,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.blue.11}",
+            "acronis-dark-mode": "{palette.blue.11}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [205.71, 14.58, 18.82]
@@ -1679,6 +1819,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.14}",
+            "acronis-dark-mode": "{palette.grayscale.14}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [208.8, 15.53, 31.57]
@@ -1693,6 +1834,7 @@
           "platforms": ["PD"],
           "values": {
             "acronis": "{palette.grayscale.7}",
+            "acronis-dark-mode": "{palette.grayscale.7}",
             "deep-sky": {
               "colorSpace": "hsl",
               "components": [207, 15.63, 25.1]
@@ -1714,6 +1856,22 @@
         "platforms": ["PD"],
         "values": {
           "acronis": [
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [234.11, 56.57, 38.82]
+              },
+              "position": 0.2
+            },
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [303.09, 69.78, 27.25]
+              },
+              "position": 1
+            }
+          ],
+          "acronis-dark-mode": [
             {
               "color": {
                 "colorSpace": "hsl",
@@ -1771,6 +1929,22 @@
               "position": 1
             }
           ],
+          "acronis-dark-mode": [
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [234.38, 100, 93.73]
+              },
+              "position": 0.2
+            },
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [303.24, 100, 92.75]
+              },
+              "position": 1
+            }
+          ],
           "deep-sky": [
             {
               "color": {
@@ -1813,6 +1987,22 @@
               "position": 1
             }
           ],
+          "acronis-dark-mode": [
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [233.75, 58.54, 48.24]
+              },
+              "position": 0.2
+            },
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [303.22, 69.3, 42.16]
+              },
+              "position": 1
+            }
+          ],
           "deep-sky": [
             {
               "color": {
@@ -1840,6 +2030,22 @@
         "platforms": ["PD"],
         "values": {
           "acronis": [
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [233.93, 73.04, 54.9]
+              },
+              "position": 0.2
+            },
+            {
+              "color": {
+                "colorSpace": "hsl",
+                "components": [303.19, 97.18, 58.24]
+              },
+              "position": 1
+            }
+          ],
+          "acronis-dark-mode": [
             {
               "color": {
                 "colorSpace": "hsl",

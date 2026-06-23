@@ -11,7 +11,7 @@
   --ui-button-ai-container-padding-x: 12px;
   --ui-button-ai-container-width-min: 64px;
   --ui-button-ai-icon-color-active: light-dark(rgb(255 255 255), rgb(255 255 255));
-  --ui-button-ai-icon-color-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898));
+  --ui-button-ai-icon-color-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102));
   --ui-button-ai-icon-color-hover: light-dark(rgb(255 255 255), rgb(255 255 255));
   --ui-button-ai-icon-color-idle: light-dark(rgb(255 255 255), rgb(255 255 255));
   --ui-button-ai-label-color-active: light-dark(rgb(255 255 255), rgb(255 255 255));
@@ -51,7 +51,7 @@
   --ui-button-global-container-padding-y: 8px;
   --ui-button-global-icon-size: 16px;
   --ui-button-inverted-container-border-color-active: light-dark(transparent, transparent);
-  --ui-button-inverted-container-border-color-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898));
+  --ui-button-inverted-container-border-color-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102));
   --ui-button-inverted-container-border-color-hover: light-dark(transparent, transparent);
   --ui-button-inverted-container-border-color-idle: light-dark(transparent, transparent);
   --ui-button-inverted-container-border-style: solid;
@@ -77,7 +77,7 @@
   --ui-button-primary-container-padding-x: 12px;
   --ui-button-primary-container-width-min: 64px;
   --ui-button-primary-icon-color-active: light-dark(rgb(255 255 255), rgb(255 255 255));
-  --ui-button-primary-icon-color-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898));
+  --ui-button-primary-icon-color-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102));
   --ui-button-primary-icon-color-hover: light-dark(rgb(255 255 255), rgb(255 255 255));
   --ui-button-primary-icon-color-idle: light-dark(rgb(255 255 255), rgb(255 255 255));
   --ui-button-primary-label-color-active: light-dark(rgb(255 255 255), rgb(255 255 255));

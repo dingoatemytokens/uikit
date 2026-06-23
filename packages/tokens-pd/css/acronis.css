@@ -19,9 +19,9 @@
   --ui-background-inverted-primary: light-dark(rgb(11 66 142), rgb(113 119 134));
   --ui-background-overlay-inverted: light-dark(rgb(255 255 255 / 0.898), rgb(255 255 255 / 0.102));
   --ui-background-overlay-primary: light-dark(rgb(25 27 35 / 0.898), rgb(25 27 35 / 0.6));
-  --ui-background-status-ai: light-dark(rgb(249 245 251), rgb(82 20 82));
-  --ui-background-status-ai-hover: light-dark(rgb(245 238 248), rgb(108 19 108));
-  --ui-background-status-ai-pressed: light-dark(rgb(236 222 242), rgb(130 23 130));
+  --ui-background-status-ai: light-dark(rgb(249 245 251), rgb(62 15 62));
+  --ui-background-status-ai-hover: light-dark(rgb(245 238 248), rgb(87 15 87));
+  --ui-background-status-ai-pressed: light-dark(rgb(236 222 242), rgb(108 19 108));
   --ui-background-status-critical: light-dark(rgb(255 240 230), rgb(77 35 0));
   --ui-background-status-critical-hover: light-dark(rgb(255 231 214), rgb(102 45 0));
   --ui-background-status-critical-pressed: light-dark(rgb(255 222 194), rgb(128 58 0));
@@ -57,7 +57,7 @@
   --ui-background-status-success: light-dark(rgb(238 247 239), rgb(3 58 17));
   --ui-background-status-success-hover: light-dark(rgb(226 245 229), rgb(8 69 23));
   --ui-background-status-success-pressed: light-dark(rgb(209 240 214), rgb(15 87 33));
-  --ui-background-status-warning: light-dark(rgb(255 249 229), rgb(31 32 34));
+  --ui-background-status-warning: light-dark(rgb(255 249 229), rgb(102 73 0));
   --ui-background-status-warning-hover: light-dark(rgb(255 244 204), rgb(102 73 0));
   --ui-background-status-warning-pressed: light-dark(rgb(255 238 178), rgb(138 99 0));
   --ui-background-surface-active: light-dark(rgb(214 228 245), rgb(48 50 54));
@@ -65,9 +65,9 @@
   --ui-background-surface-primary: light-dark(rgb(255 255 255), rgb(31 32 34));
   --ui-background-surface-secondary: light-dark(rgb(248 250 252), rgb(24 25 27));
   --ui-background-transparent: light-dark(transparent, transparent);
-  --ui-border-on-brand-border: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898));
+  --ui-border-on-brand-border: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102));
   --ui-border-on-brand-border-active: light-dark(rgb(244 245 245), rgb(24 25 27));
-  --ui-border-on-brand-divider: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898));
+  --ui-border-on-brand-divider: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102));
   --ui-border-on-status-ai-strong: linear-gradient(90deg, rgb(56 73 224) 20%, rgb(252 45 241) 100%);
   --ui-border-on-status-critical: light-dark(rgb(255 204 153), rgb(153 69 0));
   --ui-border-on-status-critical-strong: light-dark(rgb(240 112 0), rgb(133 83 33));
@@ -90,7 +90,7 @@
   --ui-focus-error: light-dark(rgb(248 195 195), rgb(151 27 27));
   --ui-focus-primary: light-dark(rgb(190 215 244), rgb(11 66 142));
   --ui-focus-secondary: light-dark(rgb(190 215 244), rgb(11 66 142));
-  --ui-glyph-on-brand-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.898));
+  --ui-glyph-on-brand-disabled: light-dark(rgb(255 255 255 / 0.102), rgb(255 255 255 / 0.102));
   --ui-glyph-on-brand-primary: light-dark(rgb(255 255 255), rgb(255 255 255));
   --ui-glyph-on-brand-secondary: light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.502));
   --ui-glyph-on-inverted-disabled: light-dark(rgb(255 255 255 / 0.302), rgb(255 255 255 / 0.6));
