@@ -38,6 +38,11 @@ interface RenderHint {
   /** Root component/import to render when it differs from `index.component`
    *  (e.g. Resizable's root export is `ResizablePanelGroup`). */
   root?: string;
+  /** Skip story generation entirely — for imperative components whose static
+   *  render shows nothing (e.g. Toast: the region is empty until `toast()` is
+   *  called, so a generated "All States" story is a blank snapshot). Such
+   *  components rely on their hand-written stories for VR. */
+  skip?: boolean;
 }
 
 const RENDER: Record<string, RenderHint> = {
@@ -358,6 +363,12 @@ const RENDER: Record<string, RenderHint> = {
       '    ',
     ].join('\n'),
   },
+  toast: {
+    // Imperative: the region is empty until `toast()` is called, so a generated
+    // "All States" story would be a blank snapshot. VR is covered by the
+    // hand-written stories (Default / Variants / WithAction).
+    skip: true,
+  },
   resizable: {
     root: 'ResizablePanelGroup',
     ariaLabel: 'Resizable example',
@@ -571,8 +582,12 @@ function generate(name: string): boolean {
     console.warn(`skip ${name}: no @acronis-platform/ui-react component`);
     return false;
   }
-  const { index, api, anatomy } = loadSpec(name);
   const hint = RENDER[name] ?? {};
+  if (hint.skip) {
+    console.log(`skip ${name}: imperative component (no generated story)`);
+    return false;
+  }
+  const { index, api, anatomy } = loadSpec(name);
   const comp = hint.root ?? index.component;
   const { body, needsPlay } = buildStories(comp, api, anatomy, hint);
 
