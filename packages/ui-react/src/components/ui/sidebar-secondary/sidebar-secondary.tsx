@@ -203,7 +203,13 @@ const SidebarSecondaryContent = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'flex flex-1 flex-col overflow-y-auto gap-[var(--ui-sidebar-secondary-global-section-list-gap)]',
+      'flex flex-1 flex-col gap-[var(--ui-sidebar-secondary-global-section-list-gap)]',
+      // Overlay scrollbar revealed on hover (transparent thumb at rest). We
+      // deliberately avoid `::-webkit-scrollbar` styling: it forces a classic,
+      // space-reserving scrollbar that would shrink the rows and crop the
+      // full-bleed selected highlight. Standard `scrollbar-*` props keep the
+      // native overlay behavior so the thumb floats over the full-width rows.
+      'overflow-y-auto [scrollbar-width:thin] [scrollbar-color:transparent_transparent] hover:[scrollbar-color:var(--ui-border-on-surface-border)_transparent]',
       'hidden group-data-[state=expanded]/sidebar:flex',
       className
     )}

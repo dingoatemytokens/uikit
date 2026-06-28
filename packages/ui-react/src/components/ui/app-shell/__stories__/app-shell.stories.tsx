@@ -1,5 +1,62 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  BoltIcon,
+  BoxIcon,
+  BriefcaseIcon,
+  BuildingIcon,
+  ChartGrowthIcon,
+  ChevronLeftIcon,
+  ChevronsLeftIcon,
+  CircleHelpIcon,
+  HeadsetIcon,
+  InboxIcon,
+  LayoutGridIcon,
+  MonitorIcon,
+  ServerIcon,
+  ShieldCheckIcon,
+  StarIcon,
+} from '@acronis-platform/icons-react/stroke-mono';
+import { AcronisIcon } from '@acronis-platform/icons-react/solid-mono';
 
+import { SearchGlobal } from '../../search-global';
+import {
+  PageHeader,
+  PageHeaderRow,
+  PageHeaderTitle,
+} from '../../page-header';
+import {
+  Empty,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyIcon,
+  EmptyTitle,
+} from '../../empty';
+import {
+  SidebarPrimary,
+  SidebarPrimaryCollapseTrigger,
+  SidebarPrimaryContent,
+  SidebarPrimaryFooter,
+  SidebarPrimaryHeader,
+  SidebarPrimaryMenu,
+  SidebarPrimaryMenuItem,
+  SidebarPrimarySection,
+} from '../../sidebar-primary';
+import {
+  SidebarSecondary,
+  SidebarSecondaryCollapseTrigger,
+  SidebarSecondaryCollapsedBreadcrumb,
+  SidebarSecondaryContent,
+  SidebarSecondaryFooter,
+  SidebarSecondaryHeader,
+  SidebarSecondaryMenu,
+  SidebarSecondaryMenuItem,
+  SidebarSecondaryMenuSub,
+  SidebarSecondaryMenuSubContent,
+  SidebarSecondaryMenuSubItem,
+  SidebarSecondaryMenuSubTrigger,
+  SidebarSecondarySection,
+  SidebarSecondarySectionLabel,
+} from '../../sidebar-secondary';
 import {
   AppShell,
   AppShellBody,
@@ -12,54 +69,267 @@ const meta = {
   title: 'UI/AppShell',
   component: AppShell,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  parameters: { layout: 'fullscreen' },
 } satisfies Meta<typeof AppShell>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const navItems = ['Dashboard', 'Workloads', 'Protection', 'Reports', 'Settings'];
+// ---- shared slot content (the exact components + values from the Figma) ----
 
-// A representative shell — the sidebar slot holds a (placeholder) primary nav, the
-// header slot a title + action area, and main the page content. In a real app the
-// sidebar slot takes SidebarPrimary and the header takes SearchGlobal (see the
-// App Shell pattern). Bounded height + min-h-0 so the full-page scaffold fits a VR
-// snapshot.
-export const Default: Story = {
+function LogoMark() {
+  return (
+    <span className="flex items-center gap-2">
+      <AcronisIcon aria-hidden="true" />
+      <span className="leading-[1.15] group-data-[state=collapsed]/sidebar:hidden">
+        <span className="block text-base font-semibold">Acronis</span>
+        <span className="block text-sm">Cyber Platform</span>
+      </span>
+    </span>
+  );
+}
+
+function PrimaryNav({ expanded }: { expanded?: boolean }) {
+  return (
+    <SidebarPrimary expanded={expanded} aria-label="Primary">
+      <SidebarPrimaryHeader>
+        <LogoMark />
+      </SidebarPrimaryHeader>
+      <SidebarPrimaryContent>
+        <SidebarPrimarySection>
+          <SidebarPrimaryMenu>
+            <SidebarPrimaryMenuItem href="#" icon={<MonitorIcon />} selected>
+              Assets
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<ShieldCheckIcon />}>
+              Protection management
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<BriefcaseIcon />}>
+              Clients
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<HeadsetIcon />}>
+              Service desk
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<BoltIcon />}>
+              Automation
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<LayoutGridIcon />}>
+              Marketplace
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<ChartGrowthIcon />}>
+              Partner portal
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<BuildingIcon />}>
+              My company
+            </SidebarPrimaryMenuItem>
+          </SidebarPrimaryMenu>
+        </SidebarPrimarySection>
+        <SidebarPrimarySection>
+          <SidebarPrimaryMenu>
+            <SidebarPrimaryMenuItem href="#" icon={<InboxIcon />}>
+              My inbox
+            </SidebarPrimaryMenuItem>
+            <SidebarPrimaryMenuItem href="#" icon={<StarIcon />}>
+              Favorites
+            </SidebarPrimaryMenuItem>
+          </SidebarPrimaryMenu>
+        </SidebarPrimarySection>
+      </SidebarPrimaryContent>
+      <SidebarPrimaryFooter>
+        <SidebarPrimaryMenu>
+          <SidebarPrimaryMenuItem href="#" icon={<CircleHelpIcon />}>
+            Help
+          </SidebarPrimaryMenuItem>
+          <SidebarPrimaryCollapseTrigger icon={<ChevronsLeftIcon />}>
+            Collapse menu
+          </SidebarPrimaryCollapseTrigger>
+        </SidebarPrimaryMenu>
+      </SidebarPrimaryFooter>
+    </SidebarPrimary>
+  );
+}
+
+function SecondaryNav({ expanded }: { expanded?: boolean }) {
+  return (
+    <SidebarSecondary expanded={expanded}>
+      <SidebarSecondaryHeader label="Protection" />
+      <SidebarSecondaryContent>
+        <SidebarSecondarySection>
+          <SidebarSecondarySectionLabel>Overview</SidebarSecondarySectionLabel>
+          <SidebarSecondaryMenu>
+            <SidebarSecondaryMenuItem href="#" icon={<LayoutGridIcon />} selected>
+              Dashboard
+            </SidebarSecondaryMenuItem>
+            <SidebarSecondaryMenuItem href="#" icon={<ServerIcon />}>
+              Devices
+            </SidebarSecondaryMenuItem>
+          </SidebarSecondaryMenu>
+        </SidebarSecondarySection>
+        <SidebarSecondarySection>
+          <SidebarSecondarySectionLabel>
+            Configuration
+          </SidebarSecondarySectionLabel>
+          <SidebarSecondaryMenu>
+            {/* Third level: a collapsible sub-menu of nested items. */}
+            <SidebarSecondaryMenuSub defaultOpen>
+              <SidebarSecondaryMenuSubTrigger icon={<BoxIcon />}>
+                Policies
+              </SidebarSecondaryMenuSubTrigger>
+              <SidebarSecondaryMenuSubContent>
+                <SidebarSecondaryMenuSubItem href="#" selected>
+                  Backup
+                </SidebarSecondaryMenuSubItem>
+                <SidebarSecondaryMenuSubItem href="#">
+                  Antivirus
+                </SidebarSecondaryMenuSubItem>
+                <SidebarSecondaryMenuSubItem href="#">
+                  Vulnerability assessment
+                </SidebarSecondaryMenuSubItem>
+              </SidebarSecondaryMenuSubContent>
+            </SidebarSecondaryMenuSub>
+          </SidebarSecondaryMenu>
+        </SidebarSecondarySection>
+      </SidebarSecondaryContent>
+      {/* Shown in place of the section list when the secondary is collapsed. */}
+      <SidebarSecondaryCollapsedBreadcrumb
+        parentLabel="Protection"
+        currentLabel="Dashboard"
+      />
+      <SidebarSecondaryFooter>
+        <SidebarSecondaryMenu>
+          <SidebarSecondaryCollapseTrigger icon={<ChevronLeftIcon />}>
+            Collapse menu
+          </SidebarSecondaryCollapseTrigger>
+        </SidebarSecondaryMenu>
+      </SidebarSecondaryFooter>
+    </SidebarSecondary>
+  );
+}
+
+function Header() {
+  return (
+    <AppShellHeader>
+      {/* A 3-column grid (1fr · auto · 1fr) truly centers the search regardless
+          of the account label's width — equal side columns keep the middle
+          centered (a flex spacer approach gets pulled off-center by the search's
+          own width). */}
+      <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-4">
+        <span aria-hidden="true" />
+        <SearchGlobal
+          aria-label="Search"
+          placeholder="Search…"
+          className="w-[28rem] justify-self-center"
+        />
+        <span className="justify-self-end text-sm text-[var(--ui-text-on-surface-secondary)]">
+          admin@acronis.com
+        </span>
+      </div>
+    </AppShellHeader>
+  );
+}
+
+function PageBody({ title = 'Assets' }: { title?: string }) {
+  return (
+    <AppShellMain className="p-6">
+      <PageHeader>
+        <PageHeaderRow>
+          <PageHeaderTitle>{title}</PageHeaderTitle>
+        </PageHeaderRow>
+      </PageHeader>
+      <div className="h-64 rounded-md border border-border bg-[var(--ui-background-surface-secondary)]" />
+    </AppShellMain>
+  );
+}
+
+function Frame({ children }: { children: React.ReactNode }) {
+  // The shell fills the viewport with no surrounding gap; the sidebar stretches
+  // to the full height of the shell (its flex parent) and the main area scrolls.
+  return <AppShell className="h-screen">{children}</AppShell>;
+}
+
+// ---- states ----
+
+export const Expanded: Story = {
   render: () => (
-    <div className="h-[440px] overflow-hidden border border-border">
-      <AppShell className="h-full min-h-0">
-        <AppShellSidebar className="w-56 flex-col gap-1 bg-[var(--ui-background-brand-primary)] p-3 text-[var(--ui-glyph-on-brand-primary)]">
-          <div className="px-2 pb-3 text-sm font-semibold">Acronis</div>
-          {navItems.map((item, i) => (
-            <div
-              key={item}
-              className={
-                'rounded-md px-3 py-2 text-sm ' +
-                (i === 0 ? 'bg-white/15 font-medium' : 'opacity-80')
-              }
-            >
-              {item}
-            </div>
-          ))}
-        </AppShellSidebar>
-        <AppShellBody>
-          <AppShellHeader>
-            <span className="text-sm font-semibold">Dashboard</span>
-            <span className="ml-auto text-sm text-[var(--ui-text-on-surface-secondary)]">
-              admin@acronis.com
-            </span>
-          </AppShellHeader>
-          <AppShellMain className="p-6">
-            <h1 className="text-lg font-semibold">Current page title</h1>
-            <p className="mt-2 text-sm text-[var(--ui-text-on-surface-secondary)]">
-              The main content area scrolls independently of the sidebar and header.
-            </p>
-          </AppShellMain>
-        </AppShellBody>
-      </AppShell>
-    </div>
+    <Frame>
+      <AppShellSidebar>
+        <PrimaryNav />
+      </AppShellSidebar>
+      <AppShellBody>
+        <Header />
+        <PageBody />
+      </AppShellBody>
+    </Frame>
+  ),
+};
+
+export const Collapsed: Story = {
+  name: 'Collapsed primary',
+  render: () => (
+    <Frame>
+      <AppShellSidebar>
+        <PrimaryNav expanded={false} />
+      </AppShellSidebar>
+      <AppShellBody>
+        <Header />
+        <PageBody />
+      </AppShellBody>
+    </Frame>
+  ),
+};
+
+export const WithSecondary: Story = {
+  render: () => (
+    <Frame>
+      <AppShellSidebar>
+        <PrimaryNav expanded={false} />
+        <SecondaryNav />
+      </AppShellSidebar>
+      <AppShellBody>
+        <Header />
+        <PageBody title="Dashboard" />
+      </AppShellBody>
+    </Frame>
+  ),
+};
+
+export const SecondaryCollapsed: Story = {
+  render: () => (
+    <Frame>
+      <AppShellSidebar>
+        <PrimaryNav expanded={false} />
+        <SecondaryNav expanded={false} />
+      </AppShellSidebar>
+      <AppShellBody>
+        <Header />
+        <PageBody title="Dashboard" />
+      </AppShellBody>
+    </Frame>
+  ),
+};
+
+export const EmptyScreen: Story = {
+  render: () => (
+    <Frame>
+      <AppShellSidebar>
+        <PrimaryNav />
+      </AppShellSidebar>
+      <AppShellBody>
+        <Header />
+        <AppShellMain className="grid place-items-center p-6">
+          <Empty>
+            <EmptyHeader>
+              <EmptyIcon>
+                <InboxIcon />
+              </EmptyIcon>
+              <EmptyTitle>Nothing here yet</EmptyTitle>
+              <EmptyDescription>
+                When you add workloads they’ll show up on this page.
+              </EmptyDescription>
+            </EmptyHeader>
+          </Empty>
+        </AppShellMain>
+      </AppShellBody>
+    </Frame>
   ),
 };
