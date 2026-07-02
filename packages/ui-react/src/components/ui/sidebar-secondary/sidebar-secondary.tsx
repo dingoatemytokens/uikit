@@ -362,7 +362,7 @@ function SidebarSecondaryResizeEdge() {
               // 9px hit area matching ResizableHandle, absolutely positioned on inline-end edge.
               'absolute end-0 top-0 h-full w-[9px] ltr:translate-x-1/2 rtl:-translate-x-1/2 cursor-[var(--ui-resizable-cursor,ew-resize)] z-10',
               // 1px centered divider — same idle/hover/active token chain as ResizableHandle.
-              'after:absolute after:inset-y-0 after:left-1/2 after:-translate-x-1/2 after:transition-colors',
+              'after:absolute after:inset-y-0 after:start-1/2 after:-translate-x-1/2 after:transition-colors',
               'after:w-[var(--ui-resizable-border-width,1px)] after:bg-[var(--ui-border-on-surface-border)]',
               'hover:after:bg-[var(--ui-resizable-border-color-hover)]',
               'active:after:bg-[var(--ui-resizable-border-color-active)]',
